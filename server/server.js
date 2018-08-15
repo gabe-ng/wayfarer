@@ -34,6 +34,7 @@ let controllers = require("./controllers");
 // API Endpoints
 
 app.get("/api/users/", controllers.user.show);
+app.get("/api/posts", controllers.post.show);
 
 
 
