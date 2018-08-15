@@ -27,11 +27,13 @@ app.use(function (req, res, next) {
 app.use(express.static("public"));
 
 // let db = require("./models");
-// let controllers = require("./controllers");
+let controllers = require("./controllers");
 
 // ************* ROUTES ***********
 
 // API Endpoints
+
+app.get("/api/users/", controllers.user.show);
 
 
 

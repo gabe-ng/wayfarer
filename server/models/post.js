@@ -6,7 +6,6 @@ let PostSchema = new Schema({
     body: String,
     city: String,
     image: String,
-    user: String
 })
 
 let Post = mongoose.model("Post", PostSchema);
