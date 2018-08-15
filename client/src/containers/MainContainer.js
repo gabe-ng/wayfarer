@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route } from "react-router-dom";
 
-import Landing from '../containers/Landing';
+import Landing from '../components/Landing';
 import HomeContainer from './HomeContainer';
 
 class MainContainer extends Component {

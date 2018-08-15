@@ -3,3 +3,28 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+ul {
+  list-style: none;
+}
+
+/* ********** NAVBAR ************** */
+
+.navbar {
+  height: 100px;
+  background-color: black;
+  display: flex;
+}
+
+.navbar-title {
+  font-size: 2em;
+  color: white;
+}
+
+.navbar ul {
+  display: flex;
+}
+
+.navbar li {
+  color: white;
+}
