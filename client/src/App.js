@@ -1,15 +1,19 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import './App.css';
-  state = {
-    logged
-  }
+import Header from "./components/Header";
+import MainContainer from "./containers/MainContainer";
+import "./App.css";
 
 class App extends Component {
+  state = {
+    userLoggedIn: false
+  };
+
   render() {
     return (
-      <div className="App">
-       
+      <div>
+        <Header />
+        <MainContainer />
       </div>
     );
   }
