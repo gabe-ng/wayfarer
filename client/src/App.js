@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
 import './App.css';
+  state = {
+    logged
+  }
 
 class App extends Component {
   render() {
