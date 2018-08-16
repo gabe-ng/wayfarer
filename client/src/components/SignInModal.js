@@ -6,14 +6,15 @@ import UserModel from "../models/User";
 class SignInModal extends Component {
   signIn = event => {
     if (event) event.preventDefault();
-    console.log("default prevented");
 
-    let username = document.getElementById("username");
-    let password = document.getElementById("password");
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
     UserModel.logIn(username, password)
       .then(response => {
-        if (response) {
-          this.props.loginSuccess;
+          console.log(response.data);          
+        if (response.data === "success") {
+          this.props.loginSuccess();
+          this.props.closeModal();
         }
       })
       .catch(error => {

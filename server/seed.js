@@ -3,8 +3,8 @@ let db = require("./models");
 let userList = [
   {
     name: "Gabriel Ng",
-    username: "G-money",
-    password: "gabe",
+    username: "G1",
+    password: "1",
     joinDate: 08 - 15 - 2018,
     image: "None",
     posts: []

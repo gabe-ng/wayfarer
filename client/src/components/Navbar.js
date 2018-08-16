@@ -11,9 +11,9 @@ class Navbar extends Component {
   };
 
   handleOpenModal = option => {
-    if (option == "sign up") {
+    if (option === "sign up") {
       this.setState({ showSignUpModal: true });
-    } else if (option == "sign in") {
+    } else if (option === "sign in") {
       this.setState({ showSignInModal: true });
     }
   };
@@ -77,10 +77,12 @@ class Navbar extends Component {
         <SignUpModal
           isOpen={this.state.showSignUpModal}
           closeModal={this.handleCloseModal}
+          loginSuccess={this.props.loginSuccess}
         />
         <SignInModal
           isOpen={this.state.showSignInModal}
           closeModal={this.handleCloseModal}
+          loginSuccess={this.props.loginSuccess}
         />
         {menu}
       </div>
