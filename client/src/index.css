@@ -34,3 +34,16 @@ ul {
   color: white;
   padding: 0 1.5em;
 }
+
+.nav-item {
+  color: white;
+}
+
+.nav-item:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.active-nav {
+  color: teal;
+}

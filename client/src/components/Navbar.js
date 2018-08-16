@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 class Header extends Component {
   render() {
@@ -7,16 +7,28 @@ class Header extends Component {
     let menu;
 
     if (!isLoggedIn) {
-      menu = <ul>
-            <li>Sign In</li>
-            <li>Sign up</li>
-            </ul>;
+      menu = (
+        <ul>
+          <li>Sign In</li>
+          <li>Sign up</li>
+        </ul>
+      );
     } else {
-      menu = <ul>
-            <li>Home</li>
-            <li>Profile</li>
-            <li>Logout</li>
-            </ul>;
+      menu = (
+        <ul>
+          <li>
+            <NavLink to="/homepage" activeClassName="active-nav" className="nav-item">
+              Home
+            </NavLink>
+          </li>
+          <li>
+                  <NavLink to="/" exact activeClassName="active-nav" className="nav-item">
+              Profile
+            </NavLink>
+          </li>
+          <li>Logout</li>
+        </ul>
+      );
     }
 
     return (
