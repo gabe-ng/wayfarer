@@ -56,7 +56,7 @@ ul {
   background-color: rgba(0,0,0);
 }
 
-.sign-in-content {
+.modal-content {
   color: white;
   background-color: inherit;
   display: flex;
@@ -65,12 +65,12 @@ ul {
   margin: 0 auto;
 }
 
-.sign-in-form {
+.modal-form {
   display: flex;
   flex-direction: column;
 }
 
-.sign-in-form input{
+.modal-form input{
   font-size: 1.1em;
   width: 20rem;
   margin: .5em auto;

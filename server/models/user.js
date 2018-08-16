@@ -5,6 +5,7 @@ let UserSchema = new Schema({
     name: String,
     username: String,
     password: String,
+    currentCity: String,
     joinDate: Number,
     image: String,
     posts: [

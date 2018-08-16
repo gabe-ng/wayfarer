@@ -5,6 +5,7 @@ let userList = [
     name: "Gabriel Ng",
     username: "G1",
     password: "1",
+    currentCity: "San Francisco",
     joinDate: 08 - 15 - 2018,
     image: "None",
     posts: []

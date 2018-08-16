@@ -1,15 +1,77 @@
 import React, { Component } from "react";
 
 import Modal from "react-modal";
+import UserModel from "../models/User";
 
 class SignUpModal extends Component {
+
+  passwordsDoNotMatch = () => {
+    let message = document.createElement("h6");
+    message.textContent = "Passwords do not match.";
+    let errorBox = document.getElementById("error");
+    errorBox.textContent = message.textContent;
+  }
+
+  emptyField = () => {
+    let message = document.createElement("h6");
+    message.textContent = "Please fill out all required fields.";
+    let errorBox = document.getElementById("error");
+    errorBox.textContent = message.textContent;
+  }
+
+  signUp = event => {
+    if (event) event.preventDefault();
+
+    let name = document.getElementById("signup-name").value; 
+    let username = document.getElementById("signup-username").value;
+    let password = document.getElementById("signup-password").value;
+    let confirmationPassword = document.getElementById("signup-password-confirmation").value;
+    let currentCity = document.getElementById("signup-currentCity").value;
+
+    // Get current date in MM/DD/YYYY
+    let joinDate = new Date();
+    let dd = joinDate.getDate();
+    let mm = joinDate.getMonth() + 1;
+    let yyyy = joinDate.getFullYear();
+    if (dd < 10) {
+      dd = '0' + dd
+    }
+    if (mm < 10) {
+      mm = '0' + mm
+    }
+    joinDate = mm + '/' + dd + '/' + yyyy;
+
+    if (password !== confirmationPassword){
+      this.passwordsDoNotMatch();
+    } else if (name === "" || username === "" || password === "" || confirmationPassword === "") {
+      this.emptyField();
+    } else {
+      UserModel.signUp(name, username, password, currentCity, joinDate);
+    }
+
+    }
+  
+
   render() {
-    return (
-      <Modal isOpen={this.props.isOpen} contentLabel="Minimal Modal Example">
-        <h1>Sign Up</h1>
-        <button onClick={this.props.closeModal}>Close Modal</button>
-      </Modal>
-    );
+    return <Modal isOpen={this.props.isOpen} contentLabel="Sign Up Modal" className="Modal" ariaHideApp={false}>
+        <section className="modal-content">
+          <h1>Sign UP</h1>
+          <form className="modal-form">
+            <input type="text" placeholder="Full Name*" name="fullName" id="signup-name" />
+            <input type="text" placeholder="Username*" name="username" id="signup-username" />
+            <input type="password" placeholder="Password*" name="signup-password" id="signup-password" />
+            <input type="password" placeholder="Confirm Password*" name="signup-password-confirmation" id="signup-password-confirmation" />
+            <input type="text" placeholder="Current City" name="currentCity" id="signup-currentCity" />
+            <h6 id="error"> </h6>
+            <button className="login-button" onClick={this.signUp}>
+              Sign Up
+            </button>
+          </form>
+          <button className="close-modal" onClick={this.props.closeModal}>
+            Exit
+          </button>
+        </section>
+      </Modal>;
   }
 }
 

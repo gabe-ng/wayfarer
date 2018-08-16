@@ -11,13 +11,14 @@ class UserModel {
     return request;
   }
 
-  static signUp(name, username, password, joinDate, image) {
+  static signUp(name, username, password, currentCity, joinDate) {
     let request = axios.post("http://localhost:3001/api/user/create", {
       name: name,
       username: username,
       password: password,
+      currentCity: currentCity,
       joinDate: joinDate,
-      image: image,
+      image: "",
     });
 
     return request;

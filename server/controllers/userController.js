@@ -46,8 +46,9 @@ const createUser = (req, res) => {
         } else {
             let newUser = {
                 name: req.body.name,
-                username: req.body.signUpUsername,
-                password: req.body.signUpPassword,
+                username: req.body.username,
+                password: req.body.password,
+                currentCity: req.body.currentCity,
                 joinDate: req.body.joinDate,
                 image: req.body.image
             }
@@ -70,5 +71,6 @@ const createUser = (req, res) => {
 
 module.exports = {
   show: getUsers,
-  login: userLogin
+  login: userLogin,
+  create: createUser,
 };
