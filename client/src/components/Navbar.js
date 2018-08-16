@@ -4,7 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import SignUpModal from "./SignUpModal";
 import SignInModal from "./SignInModal";
 
-class Header extends Component {
+class Navbar extends Component {
   state = {
     showSignUpModal: false,
     showSignInModal: false
@@ -88,4 +88,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default Navbar;

@@ -8,9 +8,14 @@ class App extends Component {
     userLoggedIn: false,
   };
 
+  toggleLogIn = () => {
+    let status = !this.state.userLoggedIn;
+    this.setState({ userLoggedIn: status})
+  }
+
   render() {
     return <div>
-        <Navbar loggedIn={this.state.userLoggedIn} />
+        <Navbar loggedIn={this.state.userLoggedIn} loginSuccess={this.toggleLogIn}/>
         <MainContainer loggedIn={this.state.userLoggedIn} />
       </div>;
   }

@@ -11,12 +11,25 @@ const getUsers = (req, res) => {
         })
 }
 
+// POST /api/user/login
+const userLogin= (req, res) => {
+    let username = req.params.username;
+    let password = req.params.password
+    console.log(username);
+    db.User.findOne({ username: username, password: password }, (err, foundUser) => {
+        if (err) return console.log(err);
+        res.status(200);
+    })
+    
+}
+
 
 
 
 
 module.exports = {
     show: getUsers,
+    login: userLogin,
 }
 
 
