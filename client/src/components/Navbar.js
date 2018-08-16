@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 class Header extends Component {
   render() {
-    let isLoggedIn = false;
+    let isLoggedIn = true;
     let menu;
 
     if (!isLoggedIn) {
@@ -13,9 +13,9 @@ class Header extends Component {
             </ul>;
     } else {
       menu = <ul>
-            <li>Log Out</li>
-            <li>Profile</li>
             <li>Home</li>
+            <li>Profile</li>
+            <li>Logout</li>
             </ul>;
     }
 

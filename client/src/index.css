@@ -21,10 +21,16 @@ ul {
   color: white;
 }
 
+.navbar-title:hover {
+  color: white;
+  text-decoration: none;
+}
+
 .navbar ul {
   display: flex;
 }
 
 .navbar li {
   color: white;
+  padding: 0 1.5em;
 }
