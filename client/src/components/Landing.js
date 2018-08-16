@@ -16,8 +16,7 @@ class Landing extends Component {
         }
 
         return (
-            <div>
-                <h1>Landing Page</h1>
+            <div className="landing-container">
                 <Carousel />
                 {bottomSection}
             </div>
