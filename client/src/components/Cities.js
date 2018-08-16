@@ -4,8 +4,8 @@ class Cities extends Component {
 
     render() {
         return (
-            <div>
-
+            <div className="city-list-container">
+                <h1> Cities List</h1>
             </div>
         )
     }

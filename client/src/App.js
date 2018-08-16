@@ -5,7 +5,7 @@ import MainContainer from "./containers/MainContainer";
 
 class App extends Component {
   state = {
-    userLoggedIn: false,
+    userLoggedIn: true,
   };
 
   render() {
