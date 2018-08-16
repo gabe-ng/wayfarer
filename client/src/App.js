@@ -5,16 +5,14 @@ import MainContainer from "./containers/MainContainer";
 
 class App extends Component {
   state = {
-    userLoggedIn: false
+    userLoggedIn: false,
   };
 
   render() {
-    return (
-      <div>
-        <Navbar />
-        <MainContainer />
-      </div>
-    );
+    return <div>
+        <Navbar loggedIn={this.state.userLoggedIn} />
+        <MainContainer loggedIn={this.state.userLoggedIn} />
+      </div>;
   }
 }
 

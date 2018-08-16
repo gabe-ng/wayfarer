@@ -11,6 +11,7 @@ class HomeContainer extends Component {
     render() {
         return (
             <div>
+                <h1>HOME</h1>
                 <Cities />
                 <City />
             </div>

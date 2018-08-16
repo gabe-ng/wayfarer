@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 
 class Header extends Component {
   render() {
-    let isLoggedIn = true;
+    let isLoggedIn = this.props.loggedIn;
     let menu;
 
     if (!isLoggedIn) {

@@ -7,14 +7,12 @@ import HomeContainer from './HomeContainer';
 class MainContainer extends Component {
 
     render() {
-        return (
-            <div>
-                <Switch>
-                    <Route path='/home' component={HomeContainer} />
-                    <Route path='/' exact component={Landing} />
-                </Switch>
-            </div>
-        )
+        return <div>
+            <Switch>
+                <Route path="/home" render={(props) => <HomeContainer {...props} loggedIn={this.props.loggedIn} />} />
+                <Route path="/" exact render={(props) => <Landing {...props} loggedIn={this.props.loggedIn}/>} />
+            </Switch>
+          </div>;
     }
 }
 
