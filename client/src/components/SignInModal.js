@@ -6,12 +6,11 @@ import UserModel from "../models/User";
 class SignInModal extends Component {
   signIn = event => {
     if (event) event.preventDefault();
-
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
     UserModel.logIn(username, password)
       .then(response => {
-          console.log(response.data);          
+        console.log(response.data);
         if (response.data === "success") {
           this.props.loginSuccess();
           this.props.closeModal();
@@ -45,7 +44,9 @@ class SignInModal extends Component {
               name="login-password"
               id="password"
             />
-            <button className="login-button" onClick={this.signIn} >Log In</button>
+            <button className="login-button" onClick={this.signIn}>
+              Log In
+            </button>
           </form>
           <button className="close-modal" onClick={this.props.closeModal}>
             Exit

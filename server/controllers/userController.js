@@ -34,6 +34,40 @@ const userLogin = (req, res) => {
   );
 };
 
+// POST /api/user/create
+const createUser = (req, res) => {
+    db.User.findOne({ username:req.body.username }, (err, foundUser) => {
+        if (err) {
+            console.log(err);
+            return err;
+        }
+        if (foundUser) {
+            res.status(400).send("user already exists");
+        } else {
+            let newUser = {
+                name: req.body.name,
+                username: req.body.signUpUsername,
+                password: req.body.signUpPassword,
+                joinDate: req.body.joinDate,
+                image: req.body.image
+            }
+
+            db.User.create(newUser, (err, createdUser) => {
+                console.log(createdUser);
+                if (err) {
+                    console.log(err);
+                    return err;
+                } else {
+                    res.status(200).send("user successfully created");
+                }
+                
+            })
+        }
+    })
+
+}
+
+
 module.exports = {
   show: getUsers,
   login: userLogin

@@ -10,7 +10,6 @@ class App extends Component {
 
   toggleUserStatus = () => {
     console.log("user logging in");
-    
     let status = !this.state.userLoggedIn;
     this.setState({ userLoggedIn: status})
   }
