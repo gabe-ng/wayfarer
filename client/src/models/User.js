@@ -26,8 +26,10 @@ class UserModel {
   }
 
   static getInfo (username) {
-    let request = axios.post("http://localhost:3001/api/user", {username: username});
-
+    let url = `http://localhost:3001/api/user/${username}`;
+    let request = axios.get(url);
+    console.log(url);
+    
     return request;
   }
 }

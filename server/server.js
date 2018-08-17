@@ -35,10 +35,11 @@ let controllers = require("./controllers");
 
 app.get("/api/users/", controllers.user.show);
 app.get("/api/posts", controllers.post.show);
+app.get("/api/user/:username", controllers.user.find);
 
 app.post("/api/user/login/", controllers.user.login);
 app.post("/api/user/create", controllers.user.create);
-app.post("/api/user", controllers.user.find);
+
 
 
 

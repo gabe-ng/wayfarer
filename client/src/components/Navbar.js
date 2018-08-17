@@ -74,7 +74,7 @@ class Navbar extends Component {
             <NavLink
               to="/"
               exact
-              activeClassName="active-nav"
+              className="nav-logout"
             >Logout
             </NavLink>
           </li>

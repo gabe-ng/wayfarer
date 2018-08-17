@@ -1,8 +1,28 @@
 import React, { Component } from "react";
 
-class Profile extends Component {
+import UserModel from "../models/User";
 
-    render() {
+class Profile extends Component {
+    state = {
+        user: '',
+    }
+
+    componentDidMount = () => {
+        console.log("Profile mounted");
+        
+        
+        UserModel.getInfo(localStorage.getItem("username"))
+            .then(response => {
+                console.log(response);
+                this.setState({ user: response.data })
+            })
+            .catch(error => {
+                console.log("In profile catch error: ", error);
+                
+            })
+    }
+
+    render() {        
         return (
             <div className="profile-container">
                 <h1>Profile</h1>

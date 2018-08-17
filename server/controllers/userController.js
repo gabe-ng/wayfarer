@@ -11,6 +11,22 @@ const getUsers = (req, res) => {
     });
 };
 
+// GET /api/user/:username
+const findUser = (req, res) => {
+    db.User.findOne({ username: req.params.username })
+        .populate("Posts")
+        .exec((err, foundUser) => {
+            if (err) {
+                console.log(err);
+                return err;
+            }
+            console.log(req.params.username);
+            
+            console.log("user: ", foundUser);
+            res.json(foundUser);
+        })
+}
+
 // POST /api/user/login
 const userLogin = (req, res) => {
   console.log("req", req.body);
@@ -66,18 +82,6 @@ const createUser = (req, res) => {
     })
 }
 
-// POST /api/user
-const findUser = (req, res) => {
-    db.User.findOne( { username: req.body.username })
-        .populate("Posts")
-        .exec((err, foundUser) => {
-        if (err) {
-            console.log(err);
-            return err;
-        }
-        res.json(foundUser);
-    })
-}
 
 module.exports = {
   show: getUsers,

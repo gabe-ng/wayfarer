@@ -31,7 +31,7 @@ class App extends Component {
     
     return <div>
         <Navbar loggedIn={this.state.userLoggedIn} loginSuccess={this.handleUserLogin} logoutSuccess={this.handleUserLogout}/>
-        <MainContainer loggedIn={this.state.userLoggedIn} />
+        <MainContainer loggedIn={this.state.userLoggedIn} currentUser={this.state.currentUser} />
       </div>;
   }
 }

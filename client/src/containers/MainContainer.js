@@ -19,7 +19,7 @@ class MainContainer extends Component {
             path="/"
             exact
             render={props => (
-              <Landing {...props} loggedIn={this.props.loggedIn} />
+              <Landing {...props} loggedIn={this.props.loggedIn} currentUser={this.currentUser}/>
             )}
           />
         </Switch>

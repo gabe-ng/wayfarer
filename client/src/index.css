@@ -31,15 +31,16 @@ ul {
 }
 
 .navbar li {
-  color: white;
   padding: 0 1.5em;
 }
 
-.nav-item {
+.nav-item,
+.nav-logout {
   color: white;
 }
 
-.nav-item:hover {
+.nav-item:hover,
+.nav-logout:hover {
   color: white;
   text-decoration: none;
 }
