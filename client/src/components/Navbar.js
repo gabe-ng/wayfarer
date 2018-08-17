@@ -34,8 +34,7 @@ class Navbar extends Component {
 
     // false is a string here because local storage saves as a string
     if (isLoggedIn === "false") {
-      menu = (
-        <ul>
+      menu = <ul>
           <li>
             <button onClick={() => this.handleOpenModal("sign in")}>
               Sign In
@@ -46,40 +45,25 @@ class Navbar extends Component {
               Sign Up
             </button>
           </li>
-        </ul>
-      );
+        </ul>;
     } else {
-      menu = (
-        <ul>
+      menu = <ul>
           <li>
-            <NavLink
-              to="/homepage"
-              activeClassName="active-nav"
-              className="nav-item"
-            >
+            <NavLink to="/homepage" activeClassName="active-nav" className="nav-item">
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink
-              to="/"
-              exact
-              activeClassName="active-nav"
-              className="nav-item"
-            >
+            <NavLink to="/" exact activeClassName="active-nav" className="nav-item">
               Profile
             </NavLink>
           </li>
           <li onClick={this.userLogOut}>
-            <NavLink
-              to="/"
-              exact
-              className="nav-logout"
-            >Logout
+            <NavLink to="/" exact className="nav-logout">
+              Logout
             </NavLink>
           </li>
-        </ul>
-      );
+        </ul>;
     }
 
     return (

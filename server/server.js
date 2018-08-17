@@ -7,20 +7,17 @@ const app = express();
 
 // Set up Body Parser
 
-const bodyParser = require("body-parser");
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+// const bodyParser = require("body-parser");
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.json());
+
+app.use(express.json());
 
 // CORS
 
-app.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header(
-        "Access-Control-Allow-Headers",
-        "Origin, X-Requested-With, Content-Type, Accept"
-    );
-    next();
-});
+const cors = require("cors");
+
+app.use(cors());
 
 // Allow Express to access public files
 
@@ -40,6 +37,7 @@ app.get("/api/user/:username", controllers.user.find);
 app.post("/api/user/login/", controllers.user.login);
 app.post("/api/user/create", controllers.user.create);
 
+app.put("/api/user/update/:username", controllers.user.update);
 
 
 

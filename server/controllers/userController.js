@@ -82,10 +82,23 @@ const createUser = (req, res) => {
     })
 }
 
+// PUT /api/user/update/:username
+const updateUser = (req, res) => {
+    let update = req.body;
+    db.User.findOneAndUpdate({ username:req.params.username }, update, { new: true}, (err, user) => {
+        if (err) {
+            console.log(err);
+            return err;
+        }
+        res.json(user)
+    })
+}
+
 
 module.exports = {
   show: getUsers,
   find: findUser,
   login: userLogin,
   create: createUser,
+  update: updateUser,
 };

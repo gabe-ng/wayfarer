@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans');
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Fira Sans', sans-serif;
 }
 
 ul {
@@ -112,4 +114,30 @@ ul {
 /* ********** PROFILE ************** */
 .profile-container {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-title {
+  margin: .5em auto;
+  letter-spacing: 1.5px;
+}
+
+.profile-edit {
+  font-size: .3em;
+  padding-left: 1em;
+  cursor: pointer;
+}
+
+.profile-info {
+  text-align: left;
+  margin: 0 auto;
+}
+
+.profile-info p {
+  letter-spacing: 1px;
+}
+
+.profile-posts {
+  padding: 0;
 }
