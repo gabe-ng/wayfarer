@@ -49,7 +49,6 @@ const createUser = (req, res) => {
                 username: req.body.username,
                 password: req.body.password,
                 currentCity: req.body.currentCity,
-                joinDate: req.body.joinDate,
                 image: req.body.image
             }
 
@@ -65,12 +64,24 @@ const createUser = (req, res) => {
             })
         }
     })
-
 }
 
+// POST /api/user
+const findUser = (req, res) => {
+    db.User.findOne( { username: req.body.username })
+        .populate("Posts")
+        .exec((err, foundUser) => {
+        if (err) {
+            console.log(err);
+            return err;
+        }
+        res.json(foundUser);
+    })
+}
 
 module.exports = {
   show: getUsers,
+  find: findUser,
   login: userLogin,
   create: createUser,
 };

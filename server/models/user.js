@@ -6,7 +6,10 @@ let UserSchema = new Schema({
     username: String,
     password: String,
     currentCity: String,
-    joinDate: Number,
+    joinDate: { 
+        type: Date, 
+        default: Date.now
+    },
     image: String,
     posts: [
         {

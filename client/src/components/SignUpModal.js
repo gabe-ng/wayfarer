@@ -28,28 +28,24 @@ class SignUpModal extends Component {
     let confirmationPassword = document.getElementById("signup-password-confirmation").value;
     let currentCity = document.getElementById("signup-currentCity").value;
 
-    // Get current date in MM/DD/YYYY
-    let joinDate = new Date();
-    let dd = joinDate.getDate();
-    let mm = joinDate.getMonth() + 1;
-    let yyyy = joinDate.getFullYear();
-    if (dd < 10) {
-      dd = '0' + dd
-    }
-    if (mm < 10) {
-      mm = '0' + mm
-    }
-    joinDate = mm + '/' + dd + '/' + yyyy;
-
     if (password !== confirmationPassword){
       this.passwordsDoNotMatch();
     } else if (name === "" || username === "" || password === "" || confirmationPassword === "") {
       this.emptyField();
     } else {
-      UserModel.signUp(name, username, password, currentCity, joinDate);
+      UserModel.signUp(name, username, password, currentCity)
+        .then(response => {
+          console.log(response.data);
+          if (response.data === "user successfully created") {
+            this.props.loginSuccess();
+            this.props.closeModal();
+          }  
+        })
+        .catch(error => {
+          console.log("Error from catch", error); 
+        })
     }
-
-    }
+  }
   
 
   render() {
