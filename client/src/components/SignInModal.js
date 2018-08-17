@@ -12,6 +12,8 @@ class SignInModal extends Component {
       .then(response => {
         console.log(response.data);
         if (response.data === "success") {
+          localStorage.setItem("username", username);
+          localStorage.setItem("loggedIn", true);
           this.props.loginSuccess();
           this.props.closeModal();
         }

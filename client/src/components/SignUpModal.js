@@ -37,6 +37,8 @@ class SignUpModal extends Component {
         .then(response => {
           console.log(response.data);
           if (response.data === "user successfully created") {
+            localStorage.setItem("username", username);
+            localStorage.setItem("loggedIn", true);
             this.props.loginSuccess();
             this.props.closeModal();
           }  

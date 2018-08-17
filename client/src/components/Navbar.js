@@ -22,11 +22,18 @@ class Navbar extends Component {
     this.setState({ showSignUpModal: false, showSignInModal: false });
   };
 
+  userLogOut = () => {
+    localStorage.setItem("username", '');
+    localStorage.setItem("loggedIn", false);
+    this.props.logoutSuccess();
+  }
+
   render() {
     let isLoggedIn = this.props.loggedIn;
     let menu;
 
-    if (!isLoggedIn) {
+    // false is a string here because local storage saves as a string
+    if (isLoggedIn === "false") {
       menu = (
         <ul>
           <li>
@@ -63,7 +70,14 @@ class Navbar extends Component {
               Profile
             </NavLink>
           </li>
-          <li>Logout</li>
+          <li onClick={this.userLogOut}>
+            <NavLink
+              to="/"
+              exact
+              activeClassName="active-nav"
+            >Logout
+            </NavLink>
+          </li>
         </ul>
       );
     }
