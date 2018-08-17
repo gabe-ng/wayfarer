@@ -16,10 +16,11 @@ class Profile extends Component {
 
     updateProfile = (event) => {
         if (event) event.preventDefault();
+        let newName = document.getElementById("edit-name").value;
         let newUsername = document.getElementById("edit-username").value;
         let newCurrentCity = document.getElementById("edit-currentCity").value;
 
-        UserModel.updateProfile(localStorage.getItem("username"), newUsername, newCurrentCity)
+        UserModel.updateProfile(localStorage.getItem("username"), newName, newUsername, newCurrentCity)
             .then(response => {
                 this.setState({ 
                     user: response.data,
@@ -75,10 +76,12 @@ class Profile extends Component {
         } else {
             profileSection = 
                 <div className="profile-container">
-                    <form>
+                    <form className="profile-form">
+                        <input type="text" defaultValue={this.state.user.name} id="edit-name" />
                         <input type="text" defaultValue={this.state.user.username} id="edit-username" />
                         <input type="text" defaultValue={this.state.user.currentCity} id="edit-currentCity" />
                         <button onClick={this.updateProfile}>Update profile</button>
+                        <button onClick={this.toggleEditMode}>Cancel</button>
                     </form>
                 </div>
         }

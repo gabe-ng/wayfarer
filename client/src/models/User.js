@@ -33,9 +33,10 @@ class UserModel {
     return request;
   }
 
-  static updateProfile(username, newUsername, newCurrentCity) {
+  static updateProfile(username, newName, newUsername, newCurrentCity) {
     let url = `http://localhost:3001/api/user/update/${username}`;
     let request = axios.put(url, {
+      name: newName,
       username: newUsername,
       currentCity: newCurrentCity,
     });

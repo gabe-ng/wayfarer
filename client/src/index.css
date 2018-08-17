@@ -141,3 +141,19 @@ ul {
 .profile-posts {
   padding: 0;
 }
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-form input {
+  font-size: 1.1em;
+  width: 20rem;
+  margin: .5em auto;
+}
+
+.profile-form button {
+  margin-bottom: 1em;
+}
+
