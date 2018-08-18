@@ -5,14 +5,14 @@ import City from "../components/City";
 
 class CityContainer extends Component {
   state = {
-    currentCity: null,
+    currentCity: null
   };
 
   render() {
     return (
       <div className="homepage">
-        <Cities city={this.state.currentCity}/>
-            <City city={this.state.currentCity}/>
+        <Cities city={this.state.currentCity} />
+        <City city={this.state.currentCity} />
       </div>
     );
   }

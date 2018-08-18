@@ -1,9 +1,50 @@
 import React from "react";
 
-const Post = (props) => {
+const Post = props => {
   return (
     <div>
-      <h1>This is a post!</h1>
+      <div className="post">
+        <h1>Title</h1>
+        <p>
+          Lorem Ipsum Yeet Skeet wod dwqudqwndq wdjqdwq dwqdwqdq dwqjwnqdjqiwj
+          thelo dqwhdqwodq bb thejwqjd qi djqwdwdwqdjwkfnjrjwqkkqdqkd.
+        </p>
+      </div>
+      <div className="post">
+        <h1>Title</h1>
+        <p>
+          Lorem Ipsum Yeet Skeet wod dwqudqwndq wdjqdwq dwqdwqdq dwqjwnqdjqiwj
+          thelo dqwhdqwodq bb thejwqjd qi djqwdwdwqdjwkfnjrjwqkkqdqkd.
+        </p>
+      </div>
+      <div className="post">
+        <h1>Title</h1>
+        <p>
+          Lorem Ipsum Yeet Skeet wod dwqudqwndq wdjqdwq dwqdwqdq dwqjwnqdjqiwj
+          thelo dqwhdqwodq bb thejwqjd qi djqwdwdwqdjwkfnjrjwqkkqdqkd.
+        </p>
+      </div>
+      <div className="post">
+        <h1>Title</h1>
+        <p>
+          Lorem Ipsum Yeet Skeet wod dwqudqwndq wdjqdwq dwqdwqdq dwqjwnqdjqiwj
+          thelo dqwhdqwodq bb thejwqjd qi djqwdwdwqdjwkfnjrjwqkkqdqkd.
+        </p>
+      </div>
+      <div className="post">
+        <h1>Title</h1>
+        <p>
+          Lorem Ipsum Yeet Skeet wod dwqudqwndq wdjqdwq dwqdwqdq dwqjwnqdjqiwj
+          thelo dqwhdqwodq bb thejwqjd qi djqwdwdwqdjwkfnjrjwqkkqdqkd.
+        </p>
+      </div>
+      <div className="post">
+        <h1>Title</h1>
+        <p>
+          Lorem Ipsum Yeet Skeet wod dwqudqwndq wdjqdwq dwqdwqdq dwqjwnqdjqiwj
+          thelo dqwhdqwodq bb thejwqjd qi djqwdwdwqdjwkfnjrjwqkkqdqkd.
+        </p>
+      </div>
     </div>
   );
 };

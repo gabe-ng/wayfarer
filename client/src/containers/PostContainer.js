@@ -6,7 +6,11 @@ class PostContainer extends Component {
   render() {
     return (
       <div className="post-container">
-        <h1>Post Container</h1>
+        <section className="post-list-header">
+          <h1>Posts</h1>
+          <button className="add-post">Add post</button>
+        </section>
+
         <Posts />
       </div>
     );

@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Fira+Sans');
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans");
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Fira Sans', sans-serif;
+  font-family: "Fira Sans", sans-serif;
 }
 
 ul {
@@ -56,7 +56,7 @@ ul {
   width: 50vw;
   height: 50vh;
   margin: 5em auto;
-  background-color: rgba(0,0,0);
+  background-color: rgba(0, 0, 0);
 }
 
 .modal-content {
@@ -73,29 +73,25 @@ ul {
   flex-direction: column;
 }
 
-.modal-form input{
+.modal-form input {
   font-size: 1.1em;
   width: 20rem;
-  margin: .5em auto;
+  margin: 0.5em auto;
 }
 
 ::placeholder {
-  padding-left: .5em;
+  padding-left: 0.5em;
 }
 
 .login-button {
   width: 10rem;
-  margin: .5em auto;
+  margin: 0.5em auto;
 }
 
 .login-button:hover {
   background-color: black;
   color: white;
   cursor: pointer;
-}
-
-.close-modal {
-  /* align-self:  */
 }
 
 /* ********** LANDING ************** */
@@ -137,12 +133,12 @@ ul {
 }
 
 .profile-title {
-  margin: .5em auto;
+  margin: 0.5em auto;
   letter-spacing: 1.5px;
 }
 
 .profile-edit {
-  font-size: .3em;
+  font-size: 0.3em;
   padding-left: 1em;
   cursor: pointer;
 }
@@ -168,7 +164,7 @@ ul {
 .profile-form input {
   font-size: 1.1em;
   width: 20rem;
-  margin: .5em auto;
+  margin: 0.5em auto;
 }
 
 .profile-form button {
@@ -180,7 +176,6 @@ ul {
   display: flex;
   margin-top: 1em;
 }
-
 
 /* ********** CITIES LIST ************** */
 .city-list-container {
@@ -194,35 +189,36 @@ ul {
 }
 
 .city-list-container h1 {
-  margin-top: 1em;
+ font-size: 2.5em
 }
 
 .city-list {
   display: flex;
   flex-direction: column;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .city-list-item {
   max-width: 95%;
   border: 1px solid black;
   padding: 1em;
-  margin: .6em auto;
+  margin: 0.6em auto;
+  cursor: pointer;
 }
 
 .city-list-item h2 {
   display: inline-block;
-  padding-left: .5em;
+  padding-left: 0.5em;
 }
 
 .city-list-item img {
   max-height: 50%;
-  max-width: 48%;
+  max-width: 45%;
   border-radius: 5%;
 }
 
 .city-list-active {
-  background-color: red;
+  background-color: teal;
 }
 
 /* ********** CITY VIEW ************** */
@@ -230,4 +226,65 @@ ul {
   width: 60%;
   border: 1px solid black;
   margin: 0 auto;
+}
+
+.city-country-title {
+  display: flex;
+  margin: 1em auto;
+  padding-bottom: 1em;
+}
+
+.city-country-name {
+  width: 30%;
+  margin: 0 auto;
+}
+
+.city-country-name h1 {
+  font-size: 3em;
+}
+
+.city-country-name h3 {
+  font-size: 2.3em;
+}
+
+.city-country-image {
+  width: 45%;
+  margin: 0 auto;
+}
+
+.city-country-image img {
+  max-height: 100%;
+  max-width: 100%;
+  border-radius: 5%;
+}
+
+/* ********** POST CONTAINER ************** */
+.post-container {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-list-header {
+  margin: 0 1em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-post {
+  border: 1px solid black;
+}
+
+/* ********** POST LIST ************** */
+.post-list {
+  border: 1px solid green;
+  max-height: 48vh;
+  overflow-y: scroll;
+}
+
+/* ********** POST ************** */
+.post {
+  border: 1px solid red;
+  max-width: 90%;
+  margin: .5em auto;
 }
