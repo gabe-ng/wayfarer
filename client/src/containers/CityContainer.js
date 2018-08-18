@@ -4,17 +4,18 @@ import Cities from "../components/Cities";
 import City from "../components/City";
 
 class CityContainer extends Component {
-    state = {
-        currentCity: null,
-    }
+  state = {
+    currentCity: null
+  };
 
-    render() {
-        return <div>
-            <h1>HOME</h1>
-            <Cities />
-            <City />
-          </div>;
-    }
+  render() {
+    return (
+      <div className="homepage">
+        <Cities />
+        <City />
+      </div>
+    );
+  }
 }
 
 export default CityContainer;

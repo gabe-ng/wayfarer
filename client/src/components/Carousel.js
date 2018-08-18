@@ -1,35 +1,20 @@
 import React, { Component } from "react";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-bootstrap";
 
-import BigBen from "../images/BigBen.jpg";
-import GoldenGate from "../images/SanFrancisco.jpg";
-import BurjAlArab from "../images/Dubai.jpg";
-import OperaHouse from "../images/Sydney.jpg";
+import London from "../images/London.png";
+import SanFrancisco from "../images/SanFrancisco.png";
+import Dubai from "../images/Dubai.png";
+import Sydney from "../images/Sydney.png";
 
 class HomeCarousel extends Component {
   render() {
     return (
-      <Carousel className="carousel-container">
-        <div>
-          <img src={BigBen} alt="Big Ben" />
-          <p className="legend">London</p>
-        </div>
-        <div>
-          <img src={GoldenGate} alt="Golden Gate Bridge" />
-          <p className="legend">San Francisco</p>
-        </div>
-        <div>
-          <img src={BurjAlArab} alt="Burj Al Arab" />
-          <p className="legend">Dubai</p>
-        </div>
-        <div>
-          <img src={OperaHouse} alt="Sydney Opera House" />
-          <p className="legend">Sydney</p>
-        </div>
-      </Carousel>
+    <div>
+      <h1> hello</h1>
+          </div>
     );
   }
 }
 
 export default HomeCarousel;
+
