@@ -7,6 +7,7 @@ import Sydney from "../images/Sydney.png";
 import London from "../images/London.png";
 
 class City extends Component {
+
   render() {
 
     let image = (this.props.city === "San Francisco") 
@@ -36,7 +37,10 @@ class City extends Component {
             {image}
           </div>
         </section>
-        <PostContainer city={this.props.city}/>
+        <PostContainer 
+          city={this.props.city}
+          newCity={this.props.cityUpdate}
+          toggleCityUpdate={this.props.toggleCityUpdate}/>
       </div>
     );
   }

@@ -14,7 +14,7 @@ class PostContainer extends Component {
       this.setState({ showAddModal: !(this.state.showAddModal) });
   };
 
-  componentDidMount = () => {
+  fetchPosts = () => {
     PostModel.getPosts(this.props.city)
       .then(response => {
         this.setState({ postList: response.data })
@@ -24,17 +24,31 @@ class PostContainer extends Component {
       })
   }
 
+  componentDidMount = () => {
+    this.fetchPosts();
+  }
+
+  componentDidUpdate = () => {
+    if (this.props.newCity) {
+      this.fetchPosts();
+      this.props.toggleCityUpdate();
+   }
+
+  }
+
   render() {
     console.log(this.state.postList);
     
-    return <div className="post-container">
-        <section className="post-list-header">
-          <AddPostModal isOpen={this.state.showAddModal} closeModal={this.toggleModal} />
-          <h1>Posts</h1>
-          <button className="add-post" onClick={this.toggleModal}>Add post</button>
-        </section>
-        <Posts />
-      </div>;
+    return (
+      <div className="post-container">
+          <section className="post-list-header">
+            <AddPostModal isOpen={this.state.showAddModal} closeModal={this.toggleModal} />
+            <h1>Posts</h1>
+            <button className="add-post" onClick={this.toggleModal}>Add post</button>
+          </section>
+          <Posts posts={this.state.postList}/>
+      </div>
+    )
   }
 }
 

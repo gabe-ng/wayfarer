@@ -5,23 +5,40 @@ import City from "../components/City";
 
 class CityContainer extends Component {
   state = {
-    currentCity: "San Francisco"
+    currentCity: "San Francisco",
+    cityUpdated: false
+  };
+
+  toggleCityUpdate = () => {
+    this.setState({ cityUpdated: !this.state.cityUpdated });
   };
 
   setCitySanFrancisco = () => {
-    this.setState({ currentCity: "San Francisco" });
+    this.setState({
+      currentCity: "San Francisco",
+      cityUpdated: !this.state.cityUpdated
+    });
   };
 
   setCityLondon = () => {
-    this.setState({ currentCity: "London" });
+    this.setState({
+      currentCity: "London",
+      cityUpdated: !this.state.cityUpdated
+    });
   };
 
   setCitySydney = () => {
-    this.setState({ currentCity: "Sydney" });
+    this.setState({
+      currentCity: "Sydney",
+      cityUpdated: !this.state.cityUpdated
+    });
   };
 
   setCityDubai = () => {
-    this.setState({ currentCity: "Dubai" });
+    this.setState({
+      currentCity: "Dubai",
+      cityUpdated: !this.state.cityUpdated
+    });
   };
 
   render() {
@@ -33,8 +50,13 @@ class CityContainer extends Component {
           toggleLon={this.setCityLondon}
           toggleSyd={this.setCitySydney}
           toggleDub={this.setCityDubai}
+          toggleCityUpdate={this.toggleCityUpdate}
         />
-        <City city={this.state.currentCity} />
+        <City
+          city={this.state.currentCity}
+          cityUpdate={this.state.cityUpdated}
+          toggleCityUpdate={this.toggleCityUpdate}
+        />
       </div>
     );
   }

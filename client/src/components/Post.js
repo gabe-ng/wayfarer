@@ -1,52 +1,14 @@
-import React from "react";
+import React, { Component } from "react";
 
-const Post = props => {
-  return (
-    <div>
-      <div className="post">
-        <h1>Title</h1>
-        <p>
-          Lorem Ipsum Yeet Skeet wod dwqudqwndq wdjqdwq dwqdwqdq dwqjwnqdjqiwj
-          thelo dqwhdqwodq bb thejwqjd qi djqwdwdwqdjwkfnjrjwqkkqdqkd.
-        </p>
-      </div>
-      <div className="post">
-        <h1>Title</h1>
-        <p>
-          Lorem Ipsum Yeet Skeet wod dwqudqwndq wdjqdwq dwqdwqdq dwqjwnqdjqiwj
-          thelo dqwhdqwodq bb thejwqjd qi djqwdwdwqdjwkfnjrjwqkkqdqkd.
-        </p>
-      </div>
-      <div className="post">
-        <h1>Title</h1>
-        <p>
-          Lorem Ipsum Yeet Skeet wod dwqudqwndq wdjqdwq dwqdwqdq dwqjwnqdjqiwj
-          thelo dqwhdqwodq bb thejwqjd qi djqwdwdwqdjwkfnjrjwqkkqdqkd.
-        </p>
-      </div>
-      <div className="post">
-        <h1>Title</h1>
-        <p>
-          Lorem Ipsum Yeet Skeet wod dwqudqwndq wdjqdwq dwqdwqdq dwqjwnqdjqiwj
-          thelo dqwhdqwodq bb thejwqjd qi djqwdwdwqdjwkfnjrjwqkkqdqkd.
-        </p>
-      </div>
-      <div className="post">
-        <h1>Title</h1>
-        <p>
-          Lorem Ipsum Yeet Skeet wod dwqudqwndq wdjqdwq dwqdwqdq dwqjwnqdjqiwj
-          thelo dqwhdqwodq bb thejwqjd qi djqwdwdwqdjwkfnjrjwqkkqdqkd.
-        </p>
-      </div>
-      <div className="post">
-        <h1>Title</h1>
-        <p>
-          Lorem Ipsum Yeet Skeet wod dwqudqwndq wdjqdwq dwqdwqdq dwqjwnqdjqiwj
-          thelo dqwhdqwodq bb thejwqjd qi djqwdwdwqdjwkfnjrjwqkkqdqkd.
-        </p>
-      </div>
+class Post extends Component {
+  render() {
+    return (
+    <div className="post">
+      <h1>{this.props.post.title}</h1>
+      <p>{this.props.post.body}</p>
     </div>
-  );
-};
+    )
+  }
+}
 
 export default Post;

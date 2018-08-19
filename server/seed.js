@@ -21,7 +21,13 @@ let postList = [
   {
     title: "My second post!",
     body: "This is a great test post, don't you think?",
-    city: "Syndey",
+    city: "Sydney",
+    image: "None at the moment",
+  },
+  {
+    title: "My second Sydney post!",
+    body: "This is a great test post, don't you think?",
+    city: "Sydney",
     image: "None at the moment",
   },
   {
