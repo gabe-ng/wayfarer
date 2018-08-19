@@ -174,7 +174,7 @@ ul {
 /* ********** HOMEPAGE ************** */
 .homepage {
   display: flex;
-  margin-top: 1em;
+  margin-top: .5em;
 }
 
 /* ********** CITIES LIST ************** */
@@ -184,7 +184,7 @@ ul {
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  height: 90vh;
+  height: 88vh;
   width: 37%;
 }
 
@@ -199,7 +199,7 @@ ul {
 }
 
 .city-list-item {
-  max-width: 95%;
+  max-width: 93%;
   border: 1px solid black;
   padding: 1em;
   margin: 0.6em auto;

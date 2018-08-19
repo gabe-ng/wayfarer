@@ -5,7 +5,7 @@ import City from "../components/City";
 
 class CityContainer extends Component {
   state = {
-    currentCity: null
+    currentCity: "San Francisco"
   };
 
   render() {

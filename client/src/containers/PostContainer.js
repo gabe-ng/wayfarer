@@ -1,25 +1,25 @@
 import React, { Component } from "react";
 
 import Posts from "../components/Posts";
-import EditPost from "../components/PostModal";
+import AddPostModal from "../components/PostModal";
 
 class PostContainer extends Component {
   state = {
-    showEditModal: false
+    showAddModal: false
   };
 
   toggleModal = () => {
-      this.setState({ showSignUpModal: !(this.state.showEditModal) });
+      this.setState({ showAddModal: !(this.state.showAddModal) });
   };
 
   render() {
     return <div className="post-container">
         <section className="post-list-header">
+          <AddPostModal isOpen={this.state.showAddModal} closeModal={this.toggleModal} />
           <h1>Posts</h1>
           <button className="add-post" onClick={this.toggleModal}>Add post</button>
         </section>
         <Posts />
-      <EditPost isOpen={this.state.showSignInModal} closModal={this.state.toggleModal}/>
       </div>;
   }
 }

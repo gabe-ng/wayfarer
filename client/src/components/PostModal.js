@@ -2,18 +2,18 @@ import React, { Component } from "react";
 
 import Modal from "react-modal";
 
-class EditPost extends Component {
+class AddPostModal extends Component {
     render() {
         return(
-            <Modal isOpen={this.props.isOpen} contentLabel="Sign In Modal" className="Modal" ariaHideApp={false}>
+            <Modal isOpen={this.props.isOpen} contentLabel="Add Post Modal" className="Modal" ariaHideApp={false}>
                 <section className="modal-content">
-                    <h1>Edit Post</h1>
+                    <h1>Add Post</h1>
                     <form className="modal-form">
                         <input type="text" placeholder="Username" name="username" id="login-username" />
                         <input type="password" placeholder="Password" name="login-password" id="login-password" />
                         <h6 id="error"> </h6>
-                        <button className="login-button" onClick={this.signIn}>
-                            Log In
+                        <button className="login-button">
+                            Add Post
                         </button>
                     </form>
                     <button className="close-modal" onClick={this.props.closeModal}>
@@ -25,4 +25,4 @@ class EditPost extends Component {
     }
 }
 
-export default EditPost;
+export default AddPostModal;
