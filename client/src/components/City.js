@@ -36,7 +36,7 @@ class City extends Component {
             {image}
           </div>
         </section>
-        <PostContainer />
+        <PostContainer city={this.props.city}/>
       </div>
     );
   }

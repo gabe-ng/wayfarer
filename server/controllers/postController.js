@@ -2,14 +2,30 @@ let db = require("../models");
 
 // GET api/posts
 
-const getPosts = (req, res) => {
+const getAllPosts = (req, res) => {
     db.Post.find({}, (err, posts) => {
-        if (err) return console.log(err);
+        if (err) {
+            console.log(err)
+            return err;
+        };
+        res.json(posts);
+    })
+}
+
+// GET  api/posts/:city
+const getCityPosts = (req, res) => {
+    db.Post.find({ city: req.params.city }, (err, posts) => {
+        if (err) {
+            console.log(err)
+            return err;
+        };
         res.json(posts);
     })
 }
 
 
 module.exports = {
-    show: getPosts,
+    showAll: getAllPosts,
+    find: getCityPosts,
+    
 }

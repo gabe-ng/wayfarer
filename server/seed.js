@@ -17,12 +17,35 @@ let postList = [
     body: "This is a great test post, don't you think?",
     city: "San Francisco",
     image: "None at the moment",
-    username: "G-money",
-  }
+  },
+  {
+    title: "My second post!",
+    body: "This is a great test post, don't you think?",
+    city: "Syndey",
+    image: "None at the moment",
+  },
+  {
+    title: "My thirs post!",
+    body: "This is a great test post, don't you think?",
+    city: "Dubai",
+    image: "None at the moment",
+  },
+  {
+    title: "WOw",
+    body: "This is a great test post, don't you think?",
+    city: "San Francisco",
+    image: "None at the moment",
+  },
+  {
+    title: "hello posting",
+    body: "This is a great test post, don't you think?",
+    city: "London",
+    image: "None at the moment",
+  },
 ];
 
 db.User.remove({}, (err, users) => {
-  db.User.create(userList, (err, drinks) => {
+  db.User.create(userList, (err, users) => {
     if (err) return console.log("ERROR", err);
     console.log("All users: ", users);
     console.log("Created ", users.length, "users");
@@ -34,7 +57,7 @@ db.Post.remove({}, (err, posts) => {
     if (err) {
       return console.log("ERROR", err);
     }
-    console.log("All users: ", posts);
+    console.log("All posts: ", posts);
     console.log("Created ", posts.length, "posts");
     process.exit();
   });
