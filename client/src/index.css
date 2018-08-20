@@ -288,3 +288,8 @@ ul {
   max-width: 90%;
   margin: .5em auto;
 }
+
+/* ********** POST MODAL ************** */
+.new-post-text {
+  margin-bottom: .5em;
+}

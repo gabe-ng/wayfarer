@@ -4,7 +4,7 @@ let db = require("../models");
 
 const getUsers = (req, res) => {
   db.User.find()
-    .populate("posts", "title")
+    .populate("posts")
     .exec((err, users) => {
       if (err) return console.log(err);
       res.json(users);
@@ -36,7 +36,6 @@ const userLogin = (req, res) => {
   db.User.findOne(
     { username: username, password: password },
     (err, foundUser) => {
-      console.log("in findOne()");
       if (err) {
         console.log(err);
         return err;

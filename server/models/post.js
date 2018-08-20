@@ -6,6 +6,10 @@ let PostSchema = new Schema({
     body: String,
     city: String,
     image: String,
+    dateCreated: { 
+        type: Date, 
+        default: Date.now
+    },
 })
 
 let Post = mongoose.model("Post", PostSchema);
