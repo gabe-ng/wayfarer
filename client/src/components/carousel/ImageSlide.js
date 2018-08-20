@@ -4,7 +4,9 @@ const ImageSlide = ({ url }) => {
     const styles = {
         backgroundImage: `url(${url})`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center'
+        backgroundPosition: 'center',
+        width: "100%",
+        height: "100%",
     };
 
     return (

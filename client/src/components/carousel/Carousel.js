@@ -3,16 +3,16 @@ import React, { Component } from "react";
 import Arrow from "./Arrow";
 import ImageSlide from "./ImageSlide";
 
-import London from "../../images/London.png";
-import SanFrancisco from "../../images/SanFrancisco.png";
-import Dubai from "../../images/Dubai.png";
-import Sydney from "../../images/Sydney.png";
+import London from "./images/London.png";
+import SanFrancisco from "./images/SanFrancisco.png";
+import Dubai from "./images/Dubai.png";
+import Sydney from "./images/Sydney.png";
 
 let imgUrls = [London, SanFrancisco, Dubai, Sydney]
 
 class HomeCarousel extends Component {
   state = {
-  currentImageIndex: 0
+    currentImageIndex: 0
   }
 
   previousSlide = () => {
@@ -38,21 +38,13 @@ class HomeCarousel extends Component {
   }
 
   render() {
-    return (
-    <div className="carousel" id="carousel">
-        <Arrow
-          direction="left"
-          clickFunction={this.previousSlide}
-          glyph="&#9664;" />
-
+    return <div className="carousel" id="carousel">
         <ImageSlide url={imgUrls[this.state.currentImageIndex]} />
 
-        <Arrow
-          direction="right"
-          clickFunction={this.nextSlide}
-          glyph="&#9654;" />
-    </div>
-    );
+        <Arrow direction="left" clickFunction={this.previousSlide} glyph="&#9664;" />
+
+        <Arrow direction="right" clickFunction={this.nextSlide} glyph="&#9654;" />
+      </div>;
   }
 }
 
