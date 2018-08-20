@@ -55,6 +55,19 @@ class Profile extends Component {
         let editMode = this.state.editMode;
         let profileSection;
 
+        let posts;
+        if (this.state.user.posts != null) { 
+            posts = this.state.user.posts.map(post => {
+                let postDate = post.dateCreated.slice(0,10);
+                return <p key={post._id}>{post.title} on {postDate}</p>
+                })
+            } else {
+                posts = "No posts";
+            }
+        
+        console.log(this.state.user.posts);
+        
+      
         if (!editMode) {
             profileSection = 
             <div className="profile-container">
@@ -68,7 +81,7 @@ class Profile extends Component {
                   <p>Current City: {this.state.user.currentCity}</p>
                   <p>Date joined: {date}</p>
                   <ul className="profile-posts">
-                    Your posts: {this.state.user.posts}
+                    Your posts: {posts}
                   </ul>
                 </div>
             </div>;

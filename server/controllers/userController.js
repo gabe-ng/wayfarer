@@ -14,7 +14,7 @@ const getUsers = (req, res) => {
 // GET /api/user/:username
 const findUser = (req, res) => {
     db.User.findOne({ username: req.params.username })
-        .populate("Posts")
+        .populate("posts")
         .exec((err, foundUser) => {
             if (err) {
                 console.log(err);

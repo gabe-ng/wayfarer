@@ -43,6 +43,8 @@ app.post("/api/posts/create", controllers.post.create);
 
 app.put("/api/user/update/:username", controllers.user.update);
 
+app.delete("/api/posts/delete", controllers.post.delete);
+
 
 
 // ************** SERVER ***********

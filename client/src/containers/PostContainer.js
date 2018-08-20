@@ -24,6 +24,18 @@ class PostContainer extends Component {
       });
   };
 
+  deletePost = (event) => {
+    PostModel.deletePost(localStorage.getItem("username"), event.target.getAttribute('data-id'))
+      .then(response => {
+        console.log(response);
+        this.fetchPosts();
+      })
+      .catch((error) => {
+        console.log("in delete posts error, ", error);
+      })
+
+  }
+
   componentDidMount = () => {
     this.fetchPosts();
   };
@@ -52,7 +64,7 @@ class PostContainer extends Component {
             Add post
           </button>
         </section>
-        <Posts posts={this.state.postList} />
+        <Posts posts={this.state.postList} deletePost={this.deletePost}/>
       </div>
     );
   }

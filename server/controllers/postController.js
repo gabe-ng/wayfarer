@@ -56,9 +56,43 @@ const createPost = (req, res) => {
     })
 }
 
+// DELETE api/posts/delete
+const deletePost = (req, res) => {
+    db.User.findOne({ username: req.body.username })
+        .populate("posts")
+        .exec((err, foundUser) => {
+        if (err) {
+            console.log(err);
+            return err
+        }
+
+        let ownPost = false;
+        for (let post of foundUser.posts) {
+            console.log(post._id);
+            if (post._id == req.body.postId) {
+                ownPost = true;
+            }  
+        }
+        
+        if (ownPost) {
+            db.Post.findOneAndRemove({ _id: req.body.postId}, (err, deletedPost) => {
+                if (err) {
+                    console.log(err);
+                    return err; 
+                } else {
+                console.log(deletedPost);
+                res.status(200).send("post successfully deleted");
+                }
+            })
+        } else {
+            res.status(400).send("user not authorized");
+        }
+    })
+}
 
 module.exports = {
     showAll: getAllPosts,
     find: getCityPosts,
     create: createPost,
+    delete: deletePost,
 }

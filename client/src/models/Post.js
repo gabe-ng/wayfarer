@@ -20,6 +20,17 @@ class PostModel {
         
         return request;
     }
+
+    static deletePost(username, postId) {
+        let url = "http://localhost:3001/api/posts/delete";
+        let request = axios.delete(url, {
+            data: {
+                username: username,
+                postId: postId
+            }
+        })
+        return request;
+    }
 }
 
 export default PostModel;

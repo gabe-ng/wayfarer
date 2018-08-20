@@ -3,12 +3,18 @@ import React, { Component } from "react";
 class Post extends Component {
   render() {
     return (
-    <div className="post">
-      <h1>{this.props.post.title}</h1>
-      <p>{this.props.post.body}</p>
-      <span>(Edit Post)</span>  |  <span>(Delete Post)</span>
-    </div>
-    )
+      <div className="post">
+        <h1>{this.props.post.title}</h1>
+        <p>{this.props.post.body}</p>
+        <span>(Edit Post)</span> |{" "}
+        <span
+          onClick={this.props.deletePost}
+          data-id={this.props.post._id}
+        >
+          (Delete Post)
+        </span>
+      </div>
+    );
   }
 }
 
