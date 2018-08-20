@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import Carousel from './Carousel';
+import Carousel from './carousel/Carousel';
 import Profile from './Profile';
 
 class Landing extends Component {
