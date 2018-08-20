@@ -17,15 +17,15 @@ class Profile extends Component {
     updateProfile = (event) => {
         if (event) event.preventDefault();
         let newName = document.getElementById("edit-name").value;
-        let newUsername = document.getElementById("edit-username").value;
         let newCurrentCity = document.getElementById("edit-currentCity").value;
 
-        UserModel.updateProfile(localStorage.getItem("username"), newName, newUsername, newCurrentCity)
+        UserModel.updateProfile(localStorage.getItem("username"), newName, newCurrentCity)
             .then(response => {
+                console.log("UPDATE PROFILE RESPONSE", response);
+                
                 this.setState({ 
                     user: response.data,
                     editMode: !(this.state.editMode) })
-                localStorage.setItem("username", response.data.username);
             })
             .catch(error => {
                 console.log("in update error: ", error);
@@ -48,6 +48,8 @@ class Profile extends Component {
     }
 
     render() {  
+        console.log(this.state.user);
+        
         let date = this.state.user.joinDate ? 
             this.state.user.joinDate.slice(0, 10) 
             : "";
@@ -90,9 +92,7 @@ class Profile extends Component {
             profileSection = 
                 <div className="profile-container">
                     <form className="profile-form">
-                        <input type="text" defaultValue={this.state.user.name} id="edit-name" />
-                        <input type="text" defaultValue={this.state.user.username} id="edit-username" />
-                        <input type="text" defaultValue={this.state.user.currentCity} id="edit-currentCity" />
+                        <input type="text" defaultValue={this.state.user.name} id="edit-name" />                        <input type="text" defaultValue={this.state.user.currentCity} id="edit-currentCity" />
                         <button onClick={this.updateProfile}>Update profile</button>
                         <button onClick={this.toggleEditMode}>Cancel</button>
                     </form>

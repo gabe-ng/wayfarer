@@ -84,7 +84,9 @@ const createUser = (req, res) => {
 // PUT /api/user/update/:username
 const updateUser = (req, res) => {
     let update = req.body;
-    db.User.findOneAndUpdate({ username:req.params.username }, update, { new: true}, (err, user) => {
+    db.User.findOneAndUpdate({ username:req.params.username }, update, { new: true})
+        .populate("posts")
+        .exec((err, user) => {
         if (err) {
             console.log(err);
             return err;
@@ -92,7 +94,6 @@ const updateUser = (req, res) => {
         res.json(user)
     })
 }
-
 
 module.exports = {
   show: getUsers,

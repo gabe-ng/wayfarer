@@ -1,11 +1,25 @@
 import React, { Component } from "react";
 
 class PostForm extends Component {
-    handleUpdate = (event) => {
-        let title = document.getElementById("edit-title").value;
-        let body = document.getElementById("edit-body").value;
-        this.props.updatePost(event, this.props.id, title, body);
+  emptyField = (event) => {
+    if (event) event.preventDefault();
+
+    let message = document.createElement("h6");
+    message.textContent = "Please fill out all required fields.";
+    let errorBox = document.getElementById("edit-post-error");
+    errorBox.textContent = message.textContent;
+  };
+
+  handleUpdate = event => {
+    let title = document.getElementById("edit-title").value;
+    let body = document.getElementById("edit-body").value;
+
+    if (title === "" || body === "") {
+      this.emptyField(event);
+    } else {
+      this.props.updatePost(event, this.props.id, title, body);
     }
+  };
 
   render() {
     return (
@@ -21,9 +35,12 @@ class PostForm extends Component {
             type="text"
             defaultValue={this.props.body}
             className="edit-post-text"
-            id="edit-body">
-          </textarea>
-          <button onClick={this.handleUpdate} className="edit-post-submit">Edit post</button>
+            id="edit-body"
+          />
+          <h6 id="edit-post-error" />
+          <button onClick={this.handleUpdate} className="edit-post-submit">
+            Edit post
+          </button>
         </form>
       </div>
     );
