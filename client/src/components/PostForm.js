@@ -3,10 +3,10 @@ import React, { Component } from "react";
 class PostForm extends Component {
   render() {
     return (
-      <div className="PostForm">
-        <form>
-          <input type="text" />
-          <input type="text" />
+      <div className="post">
+        <form className="post-form">
+          <input type="text" defaultValue={this.props.title} />
+                <input type="text" defaultValue={this.props.body} />
           <button>Edit post</button>
         </form>
       </div>

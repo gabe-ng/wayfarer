@@ -293,3 +293,9 @@ ul {
 .new-post-text {
   margin-bottom: .5em;
 }
+
+/* ********** POST FORM ************** */
+.post-form {
+  display: flex;
+  flex-direction: column;
+}

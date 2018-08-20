@@ -8,22 +8,24 @@ class Post extends Component {
 
     // A user can see the edit and delete options only if they are the post creators
     if (this.props.username === localStorage.getItem("username")) {
-      options = (
-        <div>
-          <span onClick={this.props.editPost}>(Edit Post)</span>{" "}|{" "}
-          <span onClick={this.props.deletePost} data-id={this.props.post._id}>
+      options = <div>
+          <span onClick={this.props.toggleEdit} data-id={this.props.post._id}>
+            (Edit Post)
+          </span> | <span onClick={this.props.deletePost} data-id={this.props.post._id}>
             (Delete Post)
           </span>
-        </div>
-      );
+        </div>;
     } else {
-      <p>Posted by {this.props.username}</p>;
+      options = <p>Posted by {this.props.username}</p>;
     }
-
+   console.log(this.props.id);
+   
     return (
       <div>
-        {this.props.editPostId === this.key ? (
-          <PostForm />
+        {this.props.editPostId === this.props.id ? (
+          <PostForm 
+            title={this.props.title}
+            body={this.props.body}/>
         ) : (
           <div className="post">
             <h1>{this.props.post.title}</h1>

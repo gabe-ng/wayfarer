@@ -9,7 +9,7 @@ class PostContainer extends Component {
     showAddModal: false,
     postList: [],
     editingPost: false,
-    editingPostId: "5b7a35617dbfa13217097ed0",
+    editingPostId: null,
   };
 
   // Opens and closes modal for adding posts
@@ -29,12 +29,13 @@ class PostContainer extends Component {
   };
 
   // Toggles editingPost state
-  toggleEdit = () => {
-    console.log("in toggle");
+  toggleEdit = (event) => {
+    console.log("in toggle edit");
 
     this.setState({
-      editingPost: !(this.state.editing)
-    })
+      editingPost: !this.state.editing,
+      editingPostId: event.target.getAttribute("data-id"),
+    });
   }
 
   // Deletes a post if post is owned by user
@@ -63,6 +64,8 @@ class PostContainer extends Component {
 
   render() {
     console.log(this.state.postList);
+    console.log(this.state.editingPost, this.state.editingPostId);
+    
 
     return (
       <div className="post-container">
@@ -82,7 +85,7 @@ class PostContainer extends Component {
           posts={this.state.postList}
           editing={this.state.editingPost}
           editPostId={this.state.editingPostId}
-          toggleEdit={this.state.toggleEdit}
+          toggleEdit={this.toggleEdit}
           deletePost={this.deletePost}/>
       </div>
     );
