@@ -36,12 +36,12 @@ class Navbar extends Component {
     if (isLoggedIn === "false") {
       menu = <ul>
           <li>
-            <button onClick={() => this.handleOpenModal("sign in")}>
+            <button onClick={() => this.handleOpenModal("sign in")} className="nav-button">
               Sign In
             </button>
           </li>
           <li>
-            <button onClick={() => this.handleOpenModal("sign up")}>
+          <button onClick={() => this.handleOpenModal("sign up")} className="nav-button">
               Sign Up
             </button>
           </li>

@@ -3,10 +3,10 @@ import React, { Component } from "react";
 import Arrow from "./Arrow";
 import ImageSlide from "./ImageSlide";
 
-import London from "./images/London.png";
-import SanFrancisco from "./images/SanFrancisco.png";
-import Dubai from "./images/Dubai.png";
-import Sydney from "./images/Sydney.png";
+import London from "../../images/London.png";
+import SanFrancisco from "../../images/SanFrancisco.png";
+import Dubai from "../../images/Dubai.png";
+import Sydney from "../../images/Sydney.png";
 
 let imgUrls = [London, SanFrancisco, Dubai, Sydney];
 let cities = ["London", "San Francisco", "Dubai", "Sydney"];

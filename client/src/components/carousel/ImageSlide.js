@@ -11,8 +11,6 @@ class ImageSlide extends Component {
       "margin": "0",
     };
 
-    // let city = `${city}`
-
     return (
       <div className="image-slide" style={styles}>
         <h3 className="carousel-city-name">{this.props.city}</h3>

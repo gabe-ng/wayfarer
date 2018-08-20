@@ -13,27 +13,44 @@ ul {
 /* ********** NAVBAR ************** */
 
 .navbar {
-  height: 100px;
-  background-color: black;
+  height: 90px;
   display: flex;
+  position: relative;
+  background: transparent;
 }
 
 .navbar-title {
   font-size: 2em;
-  color: white;
+  letter-spacing: 2px;
+  color: navy;
 }
 
 .navbar-title:hover {
-  color: white;
+  color: lightblue;
   text-decoration: none;
 }
 
 .navbar ul {
   display: flex;
+  margin: 0;
 }
 
 .navbar li {
   padding: 0 1.5em;
+}
+
+.nav-button {
+  font-size: 1em;
+  color: navy;
+  padding-bottom: .4em;
+  letter-spacing: 1px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.nav-button:hover {
+  text-decoration: underline;
 }
 
 .nav-item,
@@ -103,7 +120,8 @@ ul {
 /* ********** CAROUSEL ************** */
 .carousel {
   height: 80vh;
-  width: 100vw;
+  width: 80vw;
+  margin: 0 auto;
 }
 
 .carousel-city-name {
