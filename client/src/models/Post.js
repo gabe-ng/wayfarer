@@ -21,6 +21,16 @@ class PostModel {
         return request;
     }
 
+    static updatePost(id, title, body) {
+        let url = "http://localhost:3001/api/posts/update/" + id;
+        let request = axios.put(url, {
+            title: title,
+            body: body,
+        })
+
+        return request;
+    }
+
     static deletePost(username, postId) {
         let url = "http://localhost:3001/api/posts/delete";
         let request = axios.delete(url, {

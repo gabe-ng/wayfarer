@@ -38,6 +38,22 @@ class PostContainer extends Component {
     });
   }
 
+  updatePost = (event, id, title, body) => {
+    console.log("in post container update post");
+    
+    if (event) event.preventDefault();
+
+    PostModel.updatePost(id, title, body)
+      .then(response => {
+        console.log(response);
+        this.setState({
+          editingPost: !this.state.editing,
+          editingPostId: null,
+        })
+        this.fetchPosts();
+      })
+  }
+
   // Deletes a post if post is owned by user
   deletePost = (event) => {
     PostModel.deletePost(localStorage.getItem("username"), event.target.getAttribute('data-id'))
@@ -86,6 +102,7 @@ class PostContainer extends Component {
           editing={this.state.editingPost}
           editPostId={this.state.editingPostId}
           toggleEdit={this.toggleEdit}
+          updatePost={this.updatePost}
           deletePost={this.deletePost}/>
       </div>
     );

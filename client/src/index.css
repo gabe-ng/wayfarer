@@ -298,4 +298,21 @@ ul {
 .post-form {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin: 1em;
+}
+
+.edit-post-title {
+  margin: 1em;
+}
+
+.edit-post-text {
+  margin: 1em;
+  font-size: 1em;
+  width: 80%;
+  height: 4rem;
+}
+
+.edit-post-submit {
+  max-width: 50%;
 }

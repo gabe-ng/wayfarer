@@ -16,6 +16,7 @@ class Posts extends Component {
         editing={this.props.editing}
         editPostId={this.props.editPostId}
         toggleEdit={this.props.toggleEdit}
+        updatePost={this.props.updatePost}
         deletePost={this.props.deletePost}/>;
     });
 

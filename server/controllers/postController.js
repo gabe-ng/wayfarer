@@ -57,6 +57,20 @@ const createPost = (req, res) => {
     })
 }
 
+// PUT api/posts/update/:id
+const updatePost = (req, res) => {
+    let update = req.body;
+    db.Post.findOneAndUpdate({ _id: req.params.id }, update, { new: true }, (err, post) => {
+        if (err) {
+            console.log(err);
+            return err;
+        }
+        console.log(post);
+        
+        res.json(post)
+    })
+}
+
 // DELETE api/posts/delete
 const deletePost = (req, res) => {
     db.User.findOne({ username: req.body.username })
@@ -95,5 +109,6 @@ module.exports = {
     showAll: getAllPosts,
     find: getCityPosts,
     create: createPost,
+    update: updatePost,
     delete: deletePost,
 }

@@ -42,6 +42,7 @@ app.post("/api/user/create", controllers.user.create);
 app.post("/api/posts/create", controllers.post.create);
 
 app.put("/api/user/update/:username", controllers.user.update);
+app.put("/api/posts/update/:id", controllers.post.update);
 
 app.delete("/api/posts/delete", controllers.post.delete);
 
