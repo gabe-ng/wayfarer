@@ -31,6 +31,7 @@ const createPost = (req, res) => {
         title: req.body.title,
         body: req.body.body,
         city: req.body.city,
+        username: req.body.username,
     }
     db.Post.create(newPost, (err, createdPost) => {
         console.log('Newly created post: ', createdPost);

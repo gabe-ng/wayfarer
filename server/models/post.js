@@ -10,6 +10,7 @@ let PostSchema = new Schema({
         type: Date, 
         default: Date.now
     },
+    username: String,
 })
 
 let Post = mongoose.model("Post", PostSchema);

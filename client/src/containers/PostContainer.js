@@ -7,13 +7,17 @@ import PostModel from "../models/Post";
 class PostContainer extends Component {
   state = {
     showAddModal: false,
-    postList: []
+    postList: [],
+    editingPost: false,
+    editingPostId: "5b7a35617dbfa13217097ed0",
   };
 
+  // Opens and closes modal for adding posts
   toggleModal = () => {
     this.setState({ showAddModal: !this.state.showAddModal });
   };
 
+  // Fetches posts for a specific city
   fetchPosts = () => {
     PostModel.getPosts(this.props.city)
       .then(response => {
@@ -24,6 +28,16 @@ class PostContainer extends Component {
       });
   };
 
+  // Toggles editingPost state
+  toggleEdit = () => {
+    console.log("in toggle");
+
+    this.setState({
+      editingPost: !(this.state.editing)
+    })
+  }
+
+  // Deletes a post if post is owned by user
   deletePost = (event) => {
     PostModel.deletePost(localStorage.getItem("username"), event.target.getAttribute('data-id'))
       .then(response => {
@@ -64,7 +78,12 @@ class PostContainer extends Component {
             Add post
           </button>
         </section>
-        <Posts posts={this.state.postList} deletePost={this.deletePost}/>
+        <Posts 
+          posts={this.state.postList}
+          editing={this.state.editingPost}
+          editPostId={this.state.editingPostId}
+          toggleEdit={this.state.toggleEdit}
+          deletePost={this.deletePost}/>
       </div>
     );
   }
