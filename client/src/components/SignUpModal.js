@@ -51,9 +51,9 @@ class SignUpModal extends Component {
   
 
   render() {
-    return <Modal isOpen={this.props.isOpen} contentLabel="Sign Up Modal" className="Modal" ariaHideApp={false}>
+    return <Modal isOpen={this.props.isOpen} contentLabel="Sign Up Modal" className="Modal signup" ariaHideApp={false}>
         <section className="modal-content">
-          <h1>Sign UP</h1>
+          <h1>Sign Up</h1>
           <form className="modal-form">
             <input type="text" placeholder="Full Name*" name="fullName" id="signup-name" />
             <input type="text" placeholder="Username*" name="username" id="signup-username" />
@@ -65,7 +65,7 @@ class SignUpModal extends Component {
               Sign Up
             </button>
           </form>
-          <button className="close-modal" onClick={this.props.closeModal}>
+          <button className="close-signup" onClick={this.props.closeModal}>
             Exit
           </button>
         </section>

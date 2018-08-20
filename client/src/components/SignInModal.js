@@ -32,7 +32,7 @@ class SignInModal extends Component {
   };
 
   render() {
-    return <Modal isOpen={this.props.isOpen} contentLabel="Sign In Modal" className="Modal" ariaHideApp={false}>
+    return <Modal isOpen={this.props.isOpen} contentLabel="Sign In Modal" className="Modal signin" ariaHideApp={false}>
         <section className="modal-content">
           <h1>Sign In</h1>
           <form className="modal-form">
@@ -43,7 +43,7 @@ class SignInModal extends Component {
               Log In
             </button>
           </form>
-          <button className="close-modal" onClick={this.props.closeModal}>
+          <button className="close-signin" onClick={this.props.closeModal}>
             Exit
           </button>
         </section>

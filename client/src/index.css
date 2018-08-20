@@ -69,11 +69,19 @@ ul {
 }
 
 /* ********** MODALS ************** */
-.Modal {
-  width: 50vw;
-  height: 50vh;
-  margin: 5em auto;
-  background-color: rgba(0, 0, 0);
+.Modal.signup {
+  width: 30vw;
+  height: 45vh;
+  margin: 10rem auto;
+  background-color: rgb(2, 14, 68);
+}
+
+.Modal.signin {
+  width: 30vw;
+  height: 31vh;
+  margin: 10rem auto;
+  padding: 1em;
+  background-color: rgb(2, 14, 68);
 }
 
 .modal-content {
@@ -94,6 +102,16 @@ ul {
   font-size: 1.1em;
   width: 20rem;
   margin: 0.5em auto;
+}
+
+.close-signup {
+  position: relative;
+  bottom: -.7rem;
+}
+
+.close-signin {
+  position: relative;
+  bottom: -.6rem;
 }
 
 ::placeholder {
