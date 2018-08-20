@@ -105,6 +105,33 @@ ul {
   height: 80vh;
   width: 100vw;
 }
+
+.carousel-city-name {
+  z-index: 10;
+  color: white;
+  font-size: 3em;
+  padding-top: .5em;
+  text-align: center;
+}
+
+.carousel-arrow {
+  font-size: 2.5em;
+  color: white;
+  cursor: pointer;
+}
+
+.left.carousel-arrow {
+  position: relative;
+  top: -53%;
+  left: 1%;
+}
+
+.right.carousel-arrow {
+  position: relative;
+  top: -61%;
+  left: 96.5%;
+}
+
 /* ********** PROFILE ************** */
 .profile-container {
   display: flex;

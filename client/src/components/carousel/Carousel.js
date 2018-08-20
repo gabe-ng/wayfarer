@@ -8,7 +8,8 @@ import SanFrancisco from "./images/SanFrancisco.png";
 import Dubai from "./images/Dubai.png";
 import Sydney from "./images/Sydney.png";
 
-let imgUrls = [London, SanFrancisco, Dubai, Sydney]
+let imgUrls = [London, SanFrancisco, Dubai, Sydney];
+let cities = ["London", "San Francisco", "Dubai", "Sydney"];
 
 class HomeCarousel extends Component {
   state = {
@@ -39,7 +40,7 @@ class HomeCarousel extends Component {
 
   render() {
     return <div className="carousel" id="carousel">
-        <ImageSlide url={imgUrls[this.state.currentImageIndex]} />
+        <ImageSlide url={imgUrls[this.state.currentImageIndex]} city={cities[this.state.currentImageIndex]}/>
 
         <Arrow direction="left" clickFunction={this.previousSlide} glyph="&#9664;" />
 
