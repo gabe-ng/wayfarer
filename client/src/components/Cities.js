@@ -4,6 +4,7 @@ import London from "../images/London.png";
 import SanFrancisco from "../images/SanFrancisco.png";
 import Dubai from "../images/Dubai.png";
 import Sydney from "../images/Sydney.png";
+import Moscow from "../images/Moscow.png";
 
 class Cities extends Component {
 
@@ -31,6 +32,9 @@ class Cities extends Component {
         case "syd":
           this.props.toggleSyd();
           break;
+        case "mos":
+          this.props.toggleMos();
+          break;
         default:
           this.props.toggleDub();
           break;
@@ -46,7 +50,7 @@ class Cities extends Component {
             <h2>San Francisco</h2>
           </div>
         <div className="city-list-item" onClick={(event) => { this.changeCityView(event, "lon") }}>
-            <img src={London} alt="Big Ben" />
+          <img src={London} alt="Buckingham Palace" />
             <h2>London</h2>
           </div>
         <div className="city-list-item" onClick={(event) => { this.changeCityView(event, "syd") }}>
@@ -56,6 +60,10 @@ class Cities extends Component {
         <div className="city-list-item" onClick={(event)=> { this.changeCityView(event, "dub")} }>
             <img src={Dubai} alt="Burj Al Arab" />
             <h2>Dubai</h2>
+          </div>
+        <div className="city-list-item" onClick={(event)=> { this.changeCityView(event, "mos")} }>
+            <img src={Moscow} alt="Kremlin" />
+            <h2>Moscow</h2>
           </div>
         </section>
       </div>;

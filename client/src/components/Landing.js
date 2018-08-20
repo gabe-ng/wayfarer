@@ -15,7 +15,7 @@ class Landing extends Component {
                 } else {
                   bottomSection = 
                   <div className="intro-info">
-                    <p className="landing-statement">Exlore. Connect. Thrive.</p>
+                    <p className="landing-statement">Explore. Connect. Thrive.</p>
                   </div>
                 }
 

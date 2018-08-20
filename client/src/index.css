@@ -47,21 +47,23 @@ ul {
   border: none;
   background: transparent;
   cursor: pointer;
+  padding-bottom: 2px;
 }
 
 .nav-button:hover {
-  text-decoration: underline;
+  border-bottom: 1px solid navy;
 }
 
 .nav-item,
 .nav-logout {
-  color: white;
+  color: navy;
+  padding-bottom: 2px;
 }
 
 .nav-item:hover,
 .nav-logout:hover {
-  color: white;
   text-decoration: none;
+  border-bottom: 1px solid navy;
 }
 
 .active-nav {
@@ -139,6 +141,8 @@ ul {
   font-size: 3em;
   text-align: center;
   padding-top: .3em;
+  letter-spacing: 5px;
+  color: navy
 }
 
 /* ********** CAROUSEL ************** */
@@ -245,6 +249,7 @@ ul {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  overflow-y: auto;
 }
 
 .city-list-item {

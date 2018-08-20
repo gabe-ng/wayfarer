@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import swal from "sweetalert";
 
 import Posts from "../components/Posts";
 import AddPostModal from "../components/PostModal";
@@ -9,7 +10,7 @@ class PostContainer extends Component {
     showAddModal: false,
     postList: [],
     editingPost: false,
-    editingPostId: null,
+    editingPostId: null
   };
 
   // Opens and closes modal for adding posts
@@ -29,43 +30,68 @@ class PostContainer extends Component {
   };
 
   // Toggles editingPost state
-  toggleEdit = (event) => {
+  toggleEdit = event => {
     console.log("in toggle edit");
 
     this.setState({
       editingPost: !this.state.editing,
-      editingPostId: event.target.getAttribute("data-id"),
+      editingPostId: event.target.getAttribute("data-id")
     });
-  }
+  };
 
   updatePost = (event, id, title, body) => {
     console.log("in post container update post");
-    
+
     if (event) event.preventDefault();
 
-    PostModel.updatePost(id, title, body)
-      .then(response => {
-        console.log(response);
-        this.setState({
-          editingPost: !this.state.editing,
-          editingPostId: null,
-        })
-        this.fetchPosts();
-      })
-  }
+    PostModel.updatePost(id, title, body).then(response => {
+      console.log(response);
+      this.setState({
+        editingPost: !this.state.editing,
+        editingPostId: null
+      });
+      this.fetchPosts();
+    });
+  };
 
   // Deletes a post if post is owned by user
-  deletePost = (event) => {
-    PostModel.deletePost(localStorage.getItem("username"), event.target.getAttribute('data-id'))
-      .then(response => {
-        console.log(response);
-        this.fetchPosts();
-      })
-      .catch((error) => {
-        console.log("in delete posts error, ", error);
-      })
+  deletePost = event => {
+    let postId = event.target.getAttribute("data-id");
+    let deletePost = false;
+    swal({
+      title: "Are you sure?",
+      text:
+        "Once deleted, nobody else can read your amazing post!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true
+    }).then((willDelete, id) => {
+      if (willDelete) {
+        deletePost = true;
+      } else {
+        swal("Your post is safe!");
+      }
 
-  }
+      if (deletePost) {
+      PostModel.deletePost(
+        localStorage.getItem("username"),
+        postId
+      )
+        .then(response => {
+          console.log(response);
+          this.fetchPosts();
+        })
+        .then(() => {
+          swal("Poof! Your post has been deleted!", {
+            icon: "success"
+          });
+        })
+        .catch(error => {
+          console.log("in delete posts error, ", error);
+        });
+      }
+    });
+  };
 
   componentDidMount = () => {
     this.fetchPosts();
@@ -81,7 +107,6 @@ class PostContainer extends Component {
   render() {
     console.log(this.state.postList);
     console.log(this.state.editingPost, this.state.editingPostId);
-    
 
     return (
       <div className="post-container">
@@ -97,13 +122,14 @@ class PostContainer extends Component {
             Add post
           </button>
         </section>
-        <Posts 
+        <Posts
           posts={this.state.postList}
           editing={this.state.editingPost}
           editPostId={this.state.editingPostId}
           toggleEdit={this.toggleEdit}
           updatePost={this.updatePost}
-          deletePost={this.deletePost}/>
+          deletePost={this.deletePost}
+        />
       </div>
     );
   }

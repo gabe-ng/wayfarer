@@ -41,6 +41,13 @@ class CityContainer extends Component {
     });
   };
 
+  setCityMoscow = () => {
+    this.setState({
+      currentCity: "Moscow",
+      cityUpdated: !this.state.cityUpdated
+    });
+  };
+
   render() {
     return (
       <div className="homepage">
@@ -50,6 +57,7 @@ class CityContainer extends Component {
           toggleLon={this.setCityLondon}
           toggleSyd={this.setCitySydney}
           toggleDub={this.setCityDubai}
+          toggleMos={this.setCityMoscow}
           toggleCityUpdate={this.toggleCityUpdate}
         />
         <City

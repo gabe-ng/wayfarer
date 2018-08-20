@@ -5,6 +5,7 @@ import SanFrancico from "../images/SanFrancisco.png";
 import Dubai from "../images/Dubai.png";
 import Sydney from "../images/Sydney.png";
 import London from "../images/London.png";
+import Moscow from "../images/Moscow.png";
 
 class City extends Component {
 
@@ -13,10 +14,12 @@ class City extends Component {
     let image = (this.props.city === "San Francisco") 
       ? <img src={SanFrancico} alt="Golden Gate Bridge" />
       : (this.props.city === "London") 
-        ? <img src={London} alt="Big Ben" /> 
+        ? <img src={London} alt="Buckingham Palace" /> 
         : (this.props.city === "Sydney")
           ? <img src={Sydney} alt="Sydney Opera House" />
-          : <img src={Dubai} alt="Burj Al Arab" />
+          : (this.props.city === "Dubai")
+            ? <img src={Dubai} alt="Burj Al Arab" />
+            : <img src={Moscow} alt="Kremlin" />
 
     let country = (this.props.city === "San Francisco")
       ? <h3>United States</h3>
@@ -24,7 +27,9 @@ class City extends Component {
         ? <h3>United Kingdom</h3>
         : (this.props.city === "Sydney")
           ? <h3>Australia</h3>
-          : <h3>United Arab Emirates</h3>
+          : (this.props.city === "Moscow")
+            ? <h3>United Arab Emirates</h3>
+            : <h3>Russia</h3>
 
     return (
       <div className="city-container">
