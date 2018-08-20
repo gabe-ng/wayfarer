@@ -39,6 +39,7 @@ app.get("/api/posts/:city", controllers.post.find);
 
 app.post("/api/user/login/", controllers.user.login);
 app.post("/api/user/create", controllers.user.create);
+app.post("/api/posts/create", controllers.post.create);
 
 app.put("/api/user/update/:username", controllers.user.update);
 
