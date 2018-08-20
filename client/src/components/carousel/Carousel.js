@@ -13,8 +13,10 @@ let cities = ["London", "San Francisco", "Dubai", "Sydney"];
 
 class HomeCarousel extends Component {
   state = {
-    currentImageIndex: 0
-  }
+    currentImageIndex: 0,
+    timer: 5,
+    currentTimeout: null
+  };
 
   previousSlide = () => {
     const lastIndex = imgUrls.length - 1;
@@ -25,7 +27,7 @@ class HomeCarousel extends Component {
     this.setState({
       currentImageIndex: index
     });
-  }
+  };
 
   nextSlide = () => {
     const lastIndex = imgUrls.length - 1;
@@ -34,18 +36,55 @@ class HomeCarousel extends Component {
     const index = shouldResetIndex ? 0 : currentImageIndex + 1;
 
     this.setState({
-      currentImageIndex: index
+      currentImageIndex: index,
+      timer: 5
+    });
+  };
+
+  decrementTime = () => {
+    if (this.state.timer === 0) {
+      this.setState({
+        currentTimeout: window.clearInterval(this.decrementTime),
+      });
+      this.nextSlide();
+    } else {
+      this.setState({
+        timer: this.state.timer - 1
+      });
+    }
+  };
+
+  componentDidMount = () => {
+    this.setState({
+      currentTimeout: window.setInterval(this.decrementTime, 1000)
     });
   }
 
+  componentDidUpdate = () => {
+    console.log(this.state.timer);
+  };
+
   render() {
-    return <div className="carousel" id="carousel">
-        <ImageSlide url={imgUrls[this.state.currentImageIndex]} city={cities[this.state.currentImageIndex]}/>
+    return (
+      <div className="carousel" id="carousel">
+        <ImageSlide
+          url={imgUrls[this.state.currentImageIndex]}
+          city={cities[this.state.currentImageIndex]}
+        />
 
-        <Arrow direction="left" clickFunction={this.previousSlide} glyph="&#9664;" />
+        <Arrow
+          direction="left"
+          clickFunction={this.previousSlide}
+          glyph="&#9664;"
+        />
 
-        <Arrow direction="right" clickFunction={this.nextSlide} glyph="&#9654;" />
-      </div>;
+        <Arrow
+          direction="right"
+          clickFunction={this.nextSlide}
+          glyph="&#9654;"
+        />
+      </div>
+    );
   }
 }
 

@@ -117,19 +117,25 @@ ul {
   flex-direction: column;
 }
 
+.landing-statement {
+  font-size: 3em;
+  text-align: center;
+  padding-top: .3em;
+}
+
 /* ********** CAROUSEL ************** */
 .carousel {
   height: 80vh;
-  width: 80vw;
+  width: 90vw;
   margin: 0 auto;
 }
 
 .carousel-city-name {
   z-index: 10;
-  color: white;
-  font-size: 3em;
-  padding-top: .5em;
-  text-align: center;
+  color: rgb(136, 135, 135);
+  font-size: 1.5em;
+  padding: .5em 0 0 .5em;
+  text-align: left;
 }
 
 .carousel-arrow {

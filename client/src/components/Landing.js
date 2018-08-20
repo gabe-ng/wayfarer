@@ -15,15 +15,7 @@ class Landing extends Component {
                 } else {
                   bottomSection = 
                   <div className="intro-info">
-                    <article className="intro-1">
-                      <p><span>Explore</span> your favorite cities across the world.</p>
-                    </article>
-                    <article className="intro-2">
-                      <p><span>Connect</span> with a community that shares a passion for traveling.</p>
-                    </article>
-                    <article className="intro-3">
-                      <p><span>Bring</span> your dreams to life.</p>
-                    </article>
+                    <p className="landing-statement">Exlore. Connect. Thrive.</p>
                   </div>
                 }
 
