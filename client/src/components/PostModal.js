@@ -40,7 +40,7 @@ class AddPostModal extends Component {
 
     render() {
         return(
-            <Modal isOpen={this.props.isOpen} contentLabel="Add Post Modal" className="Modal" ariaHideApp={false}>
+            <Modal isOpen={this.props.isOpen} contentLabel="Add Post Modal" className="Modal add-post" ariaHideApp={false}>
                 <section className="modal-content">
                     <h1>Add a Post to {this.props.currentCity}</h1>
                     <form className="modal-form">

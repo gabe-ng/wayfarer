@@ -13,19 +13,20 @@ let userList = [
 
 let postList = [
   {
+    title: "Uhh..",
+    body:
+      "Uh I don't think we should Natasha. Hold on a sec, I think I dropped my wallet by our jet. I'll brb...",
+    city: "Sydney",
+    image: "None at the moment",
+    username: "Bruce Banner"
+  },
+  {
     title: "Nice getaway",
     body:
       "This opera building is beautiful. I have an extra ticket, whaddaya say @Bruce?",
     city: "Sydney",
     image: "None at the moment",
     username: "Black Widow"
-  },
-  {
-    title: "Uhh..",
-    body: "Uh I don't think we should Natasha. Hold on a sec, I think I dropped my wallet by our jet. I'll brb...",
-    city: "Sydney",
-    image: "None at the moment",
-    username: "Bruce Banner"
   },
   {
     title: "WAKANDA FOREVA",
@@ -36,8 +37,8 @@ let postList = [
     username: "Black Panther"
   },
   {
-    title: "My thirs post!",
-    body: "This is a great test post, don't you think?",
+    title: "Eh",
+    body: "America is better.",
     city: "Dubai",
     image: "None at the moment",
     username: "Captain America"
@@ -58,6 +59,13 @@ let postList = [
     username: "Iron Man"
   },
   {
+    title: "No Groot",
+    body: "No Groot, you cannot play video games in the palace.",
+    city: "London",
+    image: "None at the moment",
+    username: "Rocket"
+  },
+  {
     title: "I am Groot",
     body: "I am Groot, I am Groot? I am Groot",
     city: "London",
@@ -65,11 +73,11 @@ let postList = [
     username: "Groot"
   },
   {
-    title: "No Groot",
-    body: "No Groot, you cannot play video games in the palace.",
-    city: "London",
+    title: "Not Funny",
+    body: "Not funny Wade. Do not mock my motherland.",
+    city: "Moscow",
     image: "None at the moment",
-    username: "Rocket"
+    username: "Colossus"
   },
   {
     title: "Colossus",
@@ -78,13 +86,6 @@ let postList = [
     city: "Moscow",
     image: "None at the moment",
     username: "Deadpool"
-  },
-  {
-    title: "Not Funny.",
-    body: "Not funny Wade. Do not mock my motherland.",
-    city: "Moscow",
-    image: "None at the moment",
-    username: "Colossus"
   }
 ];
 

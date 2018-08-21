@@ -344,6 +344,14 @@ ul {
 }
 
 /* ********** POST MODAL ************** */
+.Modal.add-post {
+  width: 30vw;
+  height: 32vh;
+  margin: 10rem auto;
+  padding: 1em;
+  background-color: rgb(2, 14, 68);
+}
+
 .new-post-text {
   margin-bottom: .5em;
 }
