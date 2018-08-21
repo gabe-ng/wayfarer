@@ -343,6 +343,28 @@ ul {
   margin: .5em auto;
 }
 
+.body-p a {
+	color: #0254EB
+}
+
+.body-p a:visited {
+	color: #0254EB
+}
+
+.body-p a.morelink {
+	text-decoration:none;
+	outline: none;
+}
+
+.morecontent span {
+	display: none;
+}
+
+.body-p {
+	background-color: #f0f0f0;
+	margin: 10px;
+}
+
 /* ********** POST MODAL ************** */
 .Modal.add-post {
   width: 30vw;

@@ -36,7 +36,7 @@ class Post extends Component {
         ) : (
           <div className="post">
             <h1>{this.props.post.title}</h1>
-            <p>{this.props.post.body}</p>
+            <p className="body-p more">{this.props.post.body}</p>
             <span data-id={this.props.id} onClick={this.props.showDetail}>Show post details</span>
             {options}
           </div>
