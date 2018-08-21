@@ -1,7 +1,6 @@
 let db = require("../models");
 
 // GET api/posts
-
 const getAllPosts = (req, res) => {
     db.Post.find({}, (err, posts) => {
         if (err) {
@@ -9,6 +8,17 @@ const getAllPosts = (req, res) => {
             return err;
         };
         res.json(posts);
+    })
+}
+
+// GET api/post/:id
+const getOnePost = (req, res) => {
+    db.Post.findOne({_id: req.params.id}, (err, foundPost) => {
+        if (err) {
+            console.log(err);
+            return err;
+        }
+        res.json(foundPost);
     })
 }
 
@@ -107,6 +117,7 @@ const deletePost = (req, res) => {
 
 module.exports = {
     showAll: getAllPosts,
+    showOne: getOnePost,
     find: getCityPosts,
     create: createPost,
     update: updatePost,

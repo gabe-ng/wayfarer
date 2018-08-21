@@ -34,8 +34,7 @@ app.get("/api/users/", controllers.user.show);
 app.get("/api/user/:username", controllers.user.find);
 app.get("/api/posts", controllers.post.showAll);
 app.get("/api/posts/:city", controllers.post.find);
-
-
+app.get("/api/post/:id", controllers.post.showOne)
 
 app.post("/api/user/login/", controllers.user.login);
 app.post("/api/user/create", controllers.user.create);

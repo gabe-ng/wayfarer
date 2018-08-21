@@ -9,6 +9,13 @@ class PostModel {
         return request;
     }
 
+    static showPost(id) {
+        let url = "http://localhost:3001/api/posts/" + id;
+        let request = axios.get(url);
+
+        return request;
+    }
+
     static addPost(title, body, city, username) {
         let url = "http://localhost:3001/api/posts/create";
         let request = axios.post(url, {

@@ -58,6 +58,21 @@ class PostContainer extends Component {
     });
   };
 
+  showPostDetail = (event) => {
+    if (event) event.preventDefault();
+
+    PostModel.showPost(event.target.getAttribute("data-id"))
+      .then(response => {
+        this.setState({ 
+          showingPost: true,
+          showPost: response.data 
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      })
+  }
+
   // Deletes a post if post is owned by user
   deletePost = event => {
     let postId = event.target.getAttribute("data-id");
@@ -114,7 +129,7 @@ class PostContainer extends Component {
 
     let render;
     if (this.state.showPost) {
-      render = <PostDetail />
+      render = <PostDetail post={this.state.showPost}/>
     } else {
       render = 
       <div className="post-container">
@@ -132,6 +147,7 @@ class PostContainer extends Component {
         </section>
         <Posts
           posts={this.state.postList}
+          showDetail={this.state.shiwPostDetail}
           editing={this.state.editingPost}
           editPostId={this.state.editingPostId}
           toggleEdit={this.toggleEdit}
