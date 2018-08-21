@@ -5,7 +5,7 @@ import City from "../components/City";
 
 class CityContainer extends Component {
   state = {
-    currentCity: "San Francisco",
+    currentCity: "Dubai",
     cityUpdated: false
   };
 

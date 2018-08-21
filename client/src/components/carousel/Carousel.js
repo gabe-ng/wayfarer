@@ -7,9 +7,10 @@ import London from "../../images/London.png";
 import SanFrancisco from "../../images/SanFrancisco.png";
 import Dubai from "../../images/Dubai.png";
 import Sydney from "../../images/Sydney.png";
+import Moscow from "../../images/Moscow.png";
 
-let imgUrls = [Dubai, London, SanFrancisco, Sydney];
-let cities = ["Dubai", "London", "San Francisco", "Sydney"];
+let imgUrls = [Dubai, London, Moscow, SanFrancisco, Sydney];
+let cities = ["Dubai", "London", "Moscow", "San Francisco", "Sydney"];
 
 class HomeCarousel extends Component {
   state = {

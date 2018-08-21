@@ -45,26 +45,28 @@ class Cities extends Component {
     return <div className="city-list-container">
         <h1>Cities</h1>
         <section className="city-list">
-        <div className="city-list-item city-list-active" onClick={(event) => { this.changeCityView(event, "sf") } }>
-            <img src={SanFrancisco} alt="Golden Gate Bridge" />
-            <h2>San Francisco</h2>
-          </div>
+        <div className="city-list-item city-list-active" onClick={(event) => { this.changeCityView(event, "dub") }}>
+          <img src={Dubai} alt="Burj Al Arab" />
+          <h2>Dubai</h2>
+        </div>
         <div className="city-list-item" onClick={(event) => { this.changeCityView(event, "lon") }}>
           <img src={London} alt="Buckingham Palace" />
-            <h2>London</h2>
-          </div>
+          <h2>London</h2>
+        </div>
+        <div className="city-list-item" onClick={(event) => { this.changeCityView(event, "mos") }}>
+          <img src={Moscow} alt="Kremlin" />
+          <h2>Moscow</h2>
+        </div>
+        <div className="city-list-item" onClick={(event) => { this.changeCityView(event, "sf") } }>
+            <img src={SanFrancisco} alt="Golden Gate Bridge" />
+            <h2>San Francisco</h2>
+        </div>
         <div className="city-list-item" onClick={(event) => { this.changeCityView(event, "syd") }}>
             <img src={Sydney} alt="Sydney Opera House" />
             <h2>Sydney</h2>
-          </div>
-        <div className="city-list-item" onClick={(event)=> { this.changeCityView(event, "dub")} }>
-            <img src={Dubai} alt="Burj Al Arab" />
-            <h2>Dubai</h2>
-          </div>
-        <div className="city-list-item" onClick={(event)=> { this.changeCityView(event, "mos")} }>
-            <img src={Moscow} alt="Kremlin" />
-            <h2>Moscow</h2>
-          </div>
+        </div>
+        
+        
         </section>
       </div>;
   }
