@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import swal from "sweetalert";
 
 import Modal from "react-modal";
 import PostModel from "../models/Post";
@@ -19,15 +20,20 @@ class AddPostModal extends Component {
 
         if (title === "" || body === "") {
             this.emptyField();
+            swal("Oops", "Please fill out all fields.", "error");
+
         } else {
             PostModel.addPost(title, body, this.props.currentCity, localStorage.getItem("username"))
                 .then(response => {
                     console.log(response);
                     this.props.closeModal();
+                    swal("Added", "Your post has been added.", "success");
                     this.props.fetchPosts();
                 })
                 .catch(error => {
                     console.log("Error creating new post, ", error);
+                    swal("Uh Oh", "There was an error on our part. Please try again.", "error");
+
                 })
         }
     }

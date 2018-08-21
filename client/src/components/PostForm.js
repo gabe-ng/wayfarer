@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import swal from "sweetalert";
 
 class PostForm extends Component {
   emptyField = (event) => {
@@ -16,6 +17,7 @@ class PostForm extends Component {
 
     if (title === "" || body === "") {
       this.emptyField(event);
+      swal("Oops", "Please fill out all fields.", "error");
     } else {
       this.props.updatePost(event, this.props.id, title, body);
     }

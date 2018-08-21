@@ -50,6 +50,7 @@ class PostContainer extends Component {
         editingPost: !this.state.editing,
         editingPostId: null
       });
+      swal("Updated", "Your post has been updated.", "info");
       this.fetchPosts();
     });
   };

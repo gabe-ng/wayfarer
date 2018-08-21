@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import swal from 'sweetalert';
 
 import Modal from "react-modal";
 import UserModel from "../models/User";
@@ -14,12 +15,14 @@ class SignInModal extends Component {
         if (response.data === "success") {
           localStorage.setItem("username", username);
           localStorage.setItem("loggedIn", true);
+          swal(`Welcome back ${localStorage.getItem("username")}!`);
           this.props.loginSuccess();
           this.props.closeModal();
         }
       })
       .catch(error => {
         console.log(error);
+        swal("Whoops", "Incorrect username or password", "error");
         this.incorrectInfo();
       });
   };
