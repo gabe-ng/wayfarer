@@ -13,7 +13,11 @@ const getAllPosts = (req, res) => {
 
 // GET api/post/:id
 const getOnePost = (req, res) => {
+    console.log(req);
+    console.log(req.params.id);
+    
     db.Post.findOne({_id: req.params.id}, (err, foundPost) => {
+        
         if (err) {
             console.log(err);
             return err;

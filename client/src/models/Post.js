@@ -10,8 +10,10 @@ class PostModel {
     }
 
     static showPost(id) {
-        let url = "http://localhost:3001/api/posts/" + id;
+        let url = "http://localhost:3001/api/posts/post/" + id;
         let request = axios.get(url);
+        console.log(request, "YEET");
+        console.log(id);
 
         return request;
     }

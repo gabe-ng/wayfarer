@@ -5,6 +5,7 @@ class PostDetail extends Component {
         return (
             <div>
                 postDetail
+                <span onClick={this.props.exitDetail}>EXIT</span>
             </div>
         )
     }

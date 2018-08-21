@@ -13,6 +13,7 @@ class Posts extends Component {
         username={post.username}
         title={post.title}
         body={post.body}
+        showDetail={this.props.showDetail}
         editing={this.props.editing}
         editPostId={this.props.editPostId}
         toggleEdit={this.props.toggleEdit}
