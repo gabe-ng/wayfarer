@@ -128,6 +128,8 @@ class PostContainer extends Component {
   };
 
   componentDidUpdate = () => {
+    console.log("in update");
+    
     if (this.props.newCity) {
       this.fetchPosts();
       this.props.toggleCityUpdate();
@@ -135,11 +137,10 @@ class PostContainer extends Component {
   };
 
   render() {
-    console.log(this.state.postList);
-    console.log(this.state.editingPost, this.state.editingPostId);
+    console.log(this.state.showingPost);
 
     let render;
-    if (this.state.showPost) {
+    if (this.state.showingPost) {
       render = <PostDetail 
         post={this.state.showPost}
         exitDetail={this.exitDetailView} />
