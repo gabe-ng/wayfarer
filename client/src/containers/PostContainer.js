@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import swal from "sweetalert";
 
 import Posts from "../components/Posts";
+import PostDetail from "../components/PostDetail";
 import AddPostModal from "../components/PostModal";
 import PostModel from "../models/Post";
 
@@ -9,6 +10,8 @@ class PostContainer extends Component {
   state = {
     showAddModal: false,
     postList: [],
+    showingPost: false,
+    showPost: null,
     editingPost: false,
     editingPostId: null
   };
@@ -109,7 +112,11 @@ class PostContainer extends Component {
     console.log(this.state.postList);
     console.log(this.state.editingPost, this.state.editingPostId);
 
-    return (
+    let render;
+    if (this.state.showPost) {
+      render = <PostDetail />
+    } else {
+      render = 
       <div className="post-container">
         <section className="post-list-header">
           <AddPostModal
@@ -132,6 +139,9 @@ class PostContainer extends Component {
           deletePost={this.deletePost}
         />
       </div>
+    }
+    return (
+     {render}
     );
   }
 }
