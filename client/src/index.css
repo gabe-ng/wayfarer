@@ -54,7 +54,7 @@ ul {
 }
 
 .nav-button:hover {
-  border-bottom: 1px solid rgb(240, 196, 116);
+  border-bottom: 1px solid navy;
 }
 
 .nav-item,
@@ -184,7 +184,6 @@ ul {
 
 /* ********** CAROUSEL ************** */
 .carousel {
-  height: 80vh;
   width: 100vw;
   margin: 0 auto;
 }

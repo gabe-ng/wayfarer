@@ -66,8 +66,18 @@ class HomeCarousel extends Component {
   };
 
   render() {
+    let styles;
+
+    if (this.props.loggedIn == 'true')  {
+      styles = { height: "65vh" }
+    } else {
+      styles = { height: "80vh" }
+    }
+    console.log(styles);
+    
+
     return (
-      <div className="carousel" id="carousel">
+      <div className="carousel" id="carousel" style={styles}>
         <ImageSlide
           url={imgUrls[this.state.currentImageIndex]}
           city={cities[this.state.currentImageIndex]}

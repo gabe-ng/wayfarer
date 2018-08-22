@@ -61,7 +61,7 @@ class Profile extends Component {
         if (this.state.user.posts != null) { 
             posts = this.state.user.posts.map(post => {
                 let postDate = post.dateCreated.slice(0,10);
-                return <p key={post._id}>{post.title} on {postDate}</p>
+                return <p key={post._id}>{post.title} in {post.city} on {postDate}</p>
                 })
             } else {
                 posts = "No posts";

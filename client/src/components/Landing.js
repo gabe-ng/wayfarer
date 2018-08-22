@@ -20,7 +20,7 @@ class Landing extends Component {
                 }
 
                 return <div className="landing-container">
-                    <Carousel />
+                    <Carousel loggedIn={this.props.loggedIn}/>
                     {bottomSection}
                   </div>;
               }
