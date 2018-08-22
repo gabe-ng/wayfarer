@@ -51,7 +51,7 @@ class Post extends Component {
           </span>
         </p>;
     } else {
-      body = this.props.body
+      body = <p className="body-p">{this.props.body}</p>;
     }
 
     return (

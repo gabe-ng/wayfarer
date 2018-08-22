@@ -55,11 +55,11 @@ class HomeCarousel extends Component {
     }
   };
 
-  componentDidMount = () => {
-    this.setState({
-      currentTimeout: window.setInterval(this.decrementTime, 1000)
-    });
-  }
+  // componentDidMount = () => {
+  //   this.setState({
+  //     currentTimeout: window.setInterval(this.decrementTime, 1000)
+  //   });
+  // }
 
   componentDidUpdate = () => {
     console.log(this.state.timer);

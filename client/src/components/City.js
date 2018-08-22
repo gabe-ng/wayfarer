@@ -28,8 +28,8 @@ class City extends Component {
         : (this.props.city === "Sydney")
           ? <h3>Australia</h3>
           : (this.props.city === "Moscow")
-            ? <h3>United Arab Emirates</h3>
-            : <h3>Russia</h3>
+            ? <h3>Russia</h3>
+            : <h3>United Arab Emirates</h3>
 
     return (
       <div className="city-container">
@@ -38,9 +38,9 @@ class City extends Component {
             <h1>{this.props.city}</h1>
             {country}
           </div>
-          <div className="city-country-image">
+          {/*<div className="city-country-image">
             {image}
-          </div>
+    </div>*/}
         </section>
         <PostContainer 
           city={this.props.city}
