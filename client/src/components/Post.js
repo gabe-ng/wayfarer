@@ -3,6 +3,11 @@ import React, { Component } from "react";
 import PostForm from "./PostForm";
 
 class Post extends Component {
+
+  toggleMoreText = () => {
+    
+  }
+
   render() {
     let options;
 
@@ -35,8 +40,7 @@ class Post extends Component {
         this.props.body.length - showChar
       );
 
-      body = (
-        <p>
+      body = <p className="body-p more">
           {shown} <span className="moreellipses"> {ellipsestext} </span>
           <span className="morecontent">
             <span>{hidden}</span>
@@ -45,8 +49,9 @@ class Post extends Component {
               {moretext}
             </a>
           </span>
-        </p>
-      );
+        </p>;
+    } else {
+      body = this.props.body
     }
 
     return (
@@ -61,10 +66,10 @@ class Post extends Component {
         ) : (
           <div className="post">
             <h1>{this.props.post.title}</h1>
-            <p className="body-p more">{body}</p>
-            <span data-id={this.props.id} onClick={this.props.showDetail}>
+            {body}
+            <p data-id={this.props.id} onClick={this.props.showDetail}>
               Show post details
-            </span>
+            </p>
             {options}
           </div>
         )}
