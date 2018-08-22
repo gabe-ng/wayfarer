@@ -74,15 +74,18 @@ class Profile extends Component {
             profileSection = 
             <div className="profile-container">
                 <h1 className="profile-title">
-                  Welcome {this.state.user.username}!<span className="profile-edit" onClick={this.toggleEditMode}>
+                  Welcome {this.state.user.username}!
+                  <p className="profile-edit" onClick={this.toggleEditMode}>
                     (Edit Profile)
-                  </span>
+                  </p>
                 </h1>
                 <div className="profile-info">
                   <p>Full Name: {this.state.user.name}</p>
                   <p>Current City: {this.state.user.currentCity}</p>
                   <p>Date joined: {date}</p>
-                  <ul className="profile-posts">
+                </div>
+                <div className="profile-posts">
+                  <ul className="profile-posts-list">
                     Your posts: {posts}
                   </ul>
                 </div>
