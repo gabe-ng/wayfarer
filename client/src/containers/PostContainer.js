@@ -156,7 +156,7 @@ class PostContainer extends Component {
           />
           <h1>Posts</h1>
           <button className="add-post" onClick={this.toggleModal}>
-            Add post
+            Add Post
           </button>
         </section>
         <Posts

@@ -6,7 +6,7 @@ class PostForm extends Component {
     if (event) event.preventDefault();
 
     let message = document.createElement("h6");
-    message.textContent = "Please fill out all required fields.";
+    message.textContent = "*Please fill out all required fields.";
     let errorBox = document.getElementById("edit-post-error");
     errorBox.textContent = message.textContent;
   };

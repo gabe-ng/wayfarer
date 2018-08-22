@@ -5,7 +5,7 @@ class ImageSlide extends Component {
     const styles = {
       backgroundImage: `url(${this.props.url})`,
       backgroundSize: "cover",
-      backgroundPosition: "center",
+      backgroundPositionY: "20%",
       width: "100%",
       height: "100%",
       "margin": "0",

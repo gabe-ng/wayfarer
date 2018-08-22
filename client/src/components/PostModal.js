@@ -20,7 +20,7 @@ class AddPostModal extends Component {
 
         if (title === "" || body === "") {
             this.emptyField();
-            swal("Oops", "Please fill out all fields.", "error");
+            swal("Oops", "*Please fill out all fields.", "error");
 
         } else {
             PostModel.addPost(title, body, this.props.currentCity, localStorage.getItem("username"))

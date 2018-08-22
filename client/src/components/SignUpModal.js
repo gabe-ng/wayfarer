@@ -8,21 +8,21 @@ class SignUpModal extends Component {
 
   passwordsDoNotMatch = () => {
     let message = document.createElement("h6");
-    message.textContent = "Passwords do not match.";
+    message.textContent = "*Passwords do not match.";
     let errorBox = document.getElementById("error");
     errorBox.textContent = message.textContent;
   }
 
   takenUsername = () => {
     let message = document.createElement("h6");
-    message.textContent = "Username already taken.";
+    message.textContent = "*Username already taken.";
     let errorBox = document.getElementById("error");
     errorBox.textContent = message.textContent;
   }
 
   emptyField = () => {
     let message = document.createElement("h6");
-    message.textContent = "Please fill out all required fields.";
+    message.textContent = "*Please fill out all required fields.";
     let errorBox = document.getElementById("error");
     errorBox.textContent = message.textContent;
   }

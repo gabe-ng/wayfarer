@@ -29,7 +29,7 @@ class SignInModal extends Component {
 
   incorrectInfo = () => {
     let message = document.createElement("h6");
-    message.textContent= "Incorrect username or password.";
+    message.textContent= "*Incorrect username or password.";
     let errorBox = document.getElementById("error");
     errorBox.textContent = message.textContent;
   };
