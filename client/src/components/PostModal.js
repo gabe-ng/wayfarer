@@ -27,7 +27,7 @@ class AddPostModal extends Component {
                 .then(response => {
                     console.log(response);
                     this.props.closeModal();
-                    swal("Added", "Your post has been added.", "success");
+                    swal("Added", "Your post has been shared.", "success");
                     this.props.fetchPosts();
                 })
                 .catch(error => {

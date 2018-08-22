@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500i');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,500i');
 
 body {
   margin: 0;
@@ -60,6 +60,7 @@ ul {
 
 .nav-item,
 .nav-logout {
+  font-style: italic;
   color: navy;
   padding-bottom: 2px;
 }
@@ -434,6 +435,7 @@ ul {
 
 .post h1 {
   font-size: 1.5em;
+  font-weight: 500;
 }
 
 .post p {
@@ -444,17 +446,21 @@ ul {
 	color: rgb(189, 140, 4)
 }
 
-.body-p a:visited {
-	color: rgb(189, 140, 4)
-}
-
 .body-p a.morelink {
 	text-decoration:none;
 	outline: none;
 }
 
+.body-p a.morelink:hover {
+  color: navy;
+}
+
 .morecontent span {
 	display: none;
+}
+
+.post-option {
+  font-size: .8em;
 }
 
 .post-option:hover {
@@ -554,7 +560,7 @@ ul {
   max-width: 50%;
 }
 
-/* ********** POST FORM ************** */
+/* ********** POST DETAIL ************** */
 .post-detail {
   background: rgba(255, 255, 255, 0.733);
   min-height: 40vh;

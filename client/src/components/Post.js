@@ -33,7 +33,7 @@ class Post extends Component {
 
     let body;
     let showChar = 500;
-    let ellipsestext = "...";
+    let ellipsestext = ". . .";
     let moretext = "more";
 
     if (this.props.body.length > showChar) {
