@@ -423,6 +423,9 @@ button:focus {
   border-radius: 6.5%;
   width: 6rem;
   height: 3em;
+}
+
+.add-post-button {
   cursor: pointer;
 }
 
