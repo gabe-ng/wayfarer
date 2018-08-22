@@ -43,6 +43,7 @@ class PostForm extends Component {
           <button onClick={this.handleUpdate} className="edit-post-submit">
             Edit post
           </button>
+          <button className="edit-post-cancel">Cancel</button>
         </form>
       </div>
     );

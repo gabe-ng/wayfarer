@@ -16,11 +16,11 @@ class Post extends Component {
       options = (
         <div>
           <span onClick={this.props.toggleEdit} data-id={this.props.post._id}>
-            (Edit Post)
+            (Edit)
           </span>{" "}
           |{" "}
           <span onClick={this.props.deletePost} data-id={this.props.post._id}>
-            (Delete Post)
+            (Delete)
           </span>
         </div>
       );

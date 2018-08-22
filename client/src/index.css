@@ -473,6 +473,39 @@ ul {
   margin: 1em;
 }
 
+.post-form input,
+.post-form textarea {
+  font-size: 1em;
+  width: 13rem;
+  margin: 0.5em auto;
+  border: 1px solid navy;
+  border-radius: 5%;
+  padding-left: .5em;
+}
+
+.post-form textarea {
+  width: 30rem;
+}
+
+.edit-post-submit,
+.edit-post-cancel {
+  font-size: .9em;
+  background: transparent;
+  border: 1px solid navy;
+  padding: .3em .5em;
+  cursor: pointer;
+}
+
+.edit-post-cancel {
+  margin-top: 1em;
+}
+
+.edit-post-submit:hover,
+.edit-post-cancel:hover {
+  background: navy;
+  color: white;
+}
+
 .edit-post-title {
   margin: 1em;
 }
