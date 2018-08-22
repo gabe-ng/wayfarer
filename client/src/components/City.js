@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import PostContainer from "../containers/PostContainer";
-import SanFrancico from "../images/SanFrancisco.png";
+import SanFrancisco from "../images/SanFrancisco.png";
 import Dubai from "../images/Dubai.png";
 import Sydney from "../images/Sydney.png";
 import London from "../images/London.png";
@@ -11,15 +11,37 @@ class City extends Component {
 
   render() {
 
-    let image = (this.props.city === "San Francisco") 
-      ? <img src={SanFrancico} alt="Golden Gate Bridge" />
-      : (this.props.city === "London") 
-        ? <img src={London} alt="Buckingham Palace" /> 
-        : (this.props.city === "Sydney")
-          ? <img src={Sydney} alt="Sydney Opera House" />
-          : (this.props.city === "Dubai")
-            ? <img src={Dubai} alt="Burj Al Arab" />
-            : <img src={Moscow} alt="Kremlin" />
+    let styles;
+
+    if (this.props.city === "San Francisco") {
+      styles = { 
+        backgroundImage: `url(${SanFrancisco})`,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+      }
+    } else if (this.props.city === "London") {
+      styles = {
+        backgroundImage: `url(${London})`,
+        backgroundRepeat: "no-repeat",
+      }
+    } else if (this.props.city === "Sydney") {
+      styles = {
+        backgroundImage: `url(${Sydney})`,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+      }
+    } else if (this.props.city === "Dubai") {
+      styles = {
+        backgroundImage: `url(${Dubai})`,
+        backgroundRepeat: "no-repeat",
+      }
+    } else {
+      styles = {
+        backgroundImage: `url(${Moscow})`,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+      }
+    }
 
     let country = (this.props.city === "San Francisco")
       ? <h3>United States</h3>
@@ -32,15 +54,12 @@ class City extends Component {
             : <h3>United Arab Emirates</h3>
 
     return (
-      <div className="city-container">
+      <div className="city-container" style={styles}>
         <section className="city-country-title">
           <div className="city-country-name">
             <h1>{this.props.city}</h1>
             {country}
           </div>
-          {/*<div className="city-country-image">
-            {image}
-    </div>*/}
         </section>
         <PostContainer 
           city={this.props.city}

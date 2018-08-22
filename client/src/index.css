@@ -107,7 +107,8 @@ ul {
   flex-direction: column;
 }
 
-.modal-form input {
+.modal-form input,
+.modal-form textarea {
   font-size: 1em;
   width: 18rem;
   margin: 0.5em auto;
@@ -196,7 +197,7 @@ ul {
   position: relative;
   top: 92%;
   text-align: left;
-  text-emphasis-style: ita
+  font-style: italic;
 }
 
 .carousel-arrow {
@@ -317,10 +318,6 @@ ul {
 
 /* ********** CITY VIEW ************** */
 .city-container {
-  background-image: url("./images/SanFrancisco.png");
-  background-repeat: no-repeat;
-  /* dont use center for dubai or london */
-  background-position: center;
   width: 68%;
   margin: 0 auto 0;
   border-radius: 1.5%;
@@ -332,7 +329,6 @@ ul {
 .city-country-title {
   display: flex;
   width: 100%;
-  /* text-align: left; */
   margin: 3em auto 0;
   padding-bottom: 1em;
 }
@@ -364,7 +360,7 @@ ul {
 
 /* ********** POST CONTAINER ************** */
 .post-container {
-  background: rgba(255, 255, 255, 0.733);
+  background: rgba(255, 255, 255, 0.774);
   display: flex;
   flex-direction: column;
 }
@@ -443,6 +439,26 @@ ul {
   padding: 1em;
   background-color: rgb(232, 242, 248);
   border-radius: 5%;
+}
+
+.add-post-button {
+  border: 1px solid navy;
+  background: transparent;
+  margin: 0 auto;
+  width: 50%;
+}
+
+.add-post-button:hover,
+.close-add-post:hover {
+  background: navy;
+  color: white;
+}
+
+.close-add-post {
+  border: 1px solid navy;
+  background: transparent;
+  cursor: pointer;
+  margin-top: .5em;
 }
 
 .new-post-text {

@@ -47,11 +47,11 @@ class AddPostModal extends Component {
                         <input type="text" placeholder="Title*" name="new-post-title" id="new-post-title" />
                         <textarea className="new-post-text" id="new-post-body" placeholder="Content*"></textarea>
                         <h6 id="error"> </h6>
-                        <button className="login-button" onClick={this.createNewPost}>
+                        <button className="add-post-button" onClick={this.createNewPost}>
                             Add Post
                         </button>
                     </form>
-                    <button className="close-modal" onClick={this.props.closeModal}>
+                    <button className="close-add-post" onClick={this.props.closeModal}>
                         Exit
                     </button>
                 </section>
