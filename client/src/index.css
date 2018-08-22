@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600');
-
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500i');
 
 body {
   margin: 0;
@@ -23,7 +22,9 @@ ul {
 }
 
 .navbar-title {
-  font-size: 2em;
+  font-size: 2.5em;
+  font-weight: 500;
+  font-style: italic;
   letter-spacing: 2px;
   color: navy;
 }
@@ -222,12 +223,13 @@ ul {
 .profile-container {
   display: flex;
   flex-direction: row;
-  /* align-items: center; */
-
   min-height: 25vh;
 }
 
 .profile-title {
+  font-size: 2.1em;
+  font-weight: 500;
+  font-style: italic;
   margin: 0.5em auto;
   letter-spacing: 1.5px;
 }

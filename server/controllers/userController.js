@@ -5,6 +5,7 @@ let db = require("../models");
 const getUsers = (req, res) => {
   db.User.find()
     .populate("posts")
+    .sort({ posts: { dateCreated: -1} })
     .exec((err, users) => {
       if (err) return console.log(err);
       res.json(users);

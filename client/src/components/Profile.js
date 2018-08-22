@@ -53,6 +53,15 @@ class Profile extends Component {
         let date = this.state.user.joinDate ? 
             this.state.user.joinDate.slice(0, 10) 
             : "";
+
+        let date2;
+        let date3;
+
+        if (date != "") {
+            date2 = new Date(date)
+            // Months use 0 index.
+            date3 = date2.getMonth() + 1 + '/' + date2.getDate() + '/' + date2.getFullYear();
+        }
         
         let editMode = this.state.editMode;
         let profileSection;
@@ -61,7 +70,9 @@ class Profile extends Component {
         if (this.state.user.posts != null) { 
             posts = this.state.user.posts.map(post => {
                 let postDate = post.dateCreated.slice(0,10);
-                return <p key={post._id}>{post.title} in {post.city} on {postDate}</p>
+                let postDate2 = new Date(postDate);
+                let postDate3 = postDate2.getMonth() + 1 + "/" + postDate2.getDate() + "/" + postDate2.getFullYear();
+                return <p key={post._id}>{post.title} in {post.city} on {postDate3}</p>
                 })
             } else {
                 posts = "No posts";
@@ -82,7 +93,7 @@ class Profile extends Component {
                 <div className="profile-info">
                   <p>Full Name: {this.state.user.name}</p>
                   <p>Current City: {this.state.user.currentCity}</p>
-                  <p>Date joined: {date}</p>
+                  <p>Date joined: {date3}</p>
                 </div>
                 <div className="profile-posts">
                   <ul className="profile-posts-list">
