@@ -4,8 +4,11 @@ import PostForm from "./PostForm";
 
 class Post extends Component {
 
-  toggleMoreText = () => {
-    
+  toggleMoreText = (event) => {
+    if (event) event.preventDefault();
+
+    document.getElementById("morecontent").style.display = "inline";
+    document.getElementById("moretext").style.display = "none";
   }
 
   render() {
@@ -14,18 +17,18 @@ class Post extends Component {
     // A user can see the edit and delete options only if they are the post creators
     if (this.props.username === localStorage.getItem("username")) {
       options = (
-        <div>
-          <span onClick={this.props.toggleEdit} data-id={this.props.post._id}>
-            (Edit)
+        <span>
+          <span className="post-option" onClick={this.props.toggleEdit} data-id={this.props.post._id}>
+            Edit
           </span>{" "}
           |{" "}
-          <span onClick={this.props.deletePost} data-id={this.props.post._id}>
-            (Delete)
+          <span className="post-option" onClick={this.props.deletePost} data-id={this.props.post._id}>
+            Delete
           </span>
-        </div>
+        </span>
       );
     } else {
-      options = <p>Posted by {this.props.username}</p>;
+      options = <span>Posted by {this.props.username}</span>;
     }
 
     let body;
@@ -42,10 +45,10 @@ class Post extends Component {
 
       body = <p className="body-p more">
           {shown} <span className="moreellipses"> {ellipsestext} </span>
-          <span className="morecontent">
-            <span>{hidden}</span>
+          <span className="morecontent" >
+            <span id="morecontent">{hidden}</span>
             &nbsp;&nbsp;
-            <a href="" className="morelink" onClick={this.toggleMoreText}>
+            <a href="" className="morelink" onClick={this.toggleMoreText} id="moretext">
               {moretext}
             </a>
           </span>
@@ -62,15 +65,15 @@ class Post extends Component {
             title={this.props.title}
             body={this.props.body}
             updatePost={this.props.updatePost}
+            cancelUpdate={this.props.cancelUpdate}
           />
         ) : (
           <div className="post">
             <h1>{this.props.post.title}</h1>
             {body}
-            <p data-id={this.props.id} onClick={this.props.showDetail}>
-              Show post details
+            <p>
+                {options} | <span className="post-option"data-id={this.props.id} onClick={this.props.showDetail}>More details</span>
             </p>
-            {options}
           </div>
         )}
       </div>

@@ -34,13 +34,21 @@ class PostContainer extends Component {
 
   // Toggles editingPost state
   toggleEdit = event => {
-    console.log("in toggle edit");
-
     this.setState({
       editingPost: !this.state.editing,
       editingPostId: event.target.getAttribute("data-id")
     });
   };
+
+  // Exit edit post state
+  exitEdit = event => {
+    if (event) event.preventDefault();
+    
+    this.setState({
+      editingPost: false,
+      editingPostId: null,
+    })
+  }
 
   updatePost = (event, id, title, body) => {
     console.log("in post container update post");
@@ -166,6 +174,7 @@ class PostContainer extends Component {
           editPostId={this.state.editingPostId}
           toggleEdit={this.toggleEdit}
           updatePost={this.updatePost}
+          cancelUpdate={this.exitEdit}
           deletePost={this.deletePost}
         />
       </div>
