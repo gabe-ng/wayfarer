@@ -4,11 +4,8 @@
 
 > Given a wireframe and user stories, I created a react-express travel app that allows users to check out different cities as well as submit posts to each city. Under each city page, users can see the collection of posts for each city.
 
-## Technologies Used
+## Built With
 
-* HTML
-* CSS
-* JavaScript
 * React
 * Node.js
 * Express
@@ -23,7 +20,7 @@
 * Individual city pages for 5 cities
 * Scrollable post feed for each city, ordered from newest to oldest
 * Users can create posts for each city, as well as update or delete any posts they have created
-* Users can click on a post to view more details
+* Users can click on a post to view its details
 
 
 ## Installation and Deployment
@@ -34,7 +31,11 @@
 
 ![alt text](/wireframes/wireframes.png)
 
+## Authors
+
+* [Gabriel Ng](https://github.com/gabe-ng)
+
 ## Acknowledgments
 
-> [Isha Arora](https://github.com/ishaarora01) and [Kenny Bushman](https://github.com/kbbushman) for answering my questions when I got stuck.
+> [Isha Arora](https://github.com/ishaarora01) and [Kenny Bushman](https://github.com/kbbushman) for answering all my questions.
 
