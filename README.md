@@ -4,6 +4,8 @@
 
 > Given a wireframe and user stories, I created a react-express travel app that allows users to check out different cities as well as submit posts to each city. Under each city page, users can see the collection of posts for each city.
 
+![alt text](/screenshots/Landing.png)
+
 ## Built With
 
 * React
