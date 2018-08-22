@@ -22,7 +22,32 @@ class Post extends Component {
     } else {
       options = <p>Posted by {this.props.username}</p>;
     }
-    console.log(this.props.id);
+
+    let body;
+    let showChar = 500;
+    let ellipsestext = "...";
+    let moretext = "more";
+
+    if (this.props.body.length > showChar) {
+      let shown = this.props.body.substr(0, showChar);
+      let hidden = this.props.body.substr(
+        showChar - 1,
+        this.props.body.length - showChar
+      );
+
+      body = (
+        <p>
+          {shown} <span className="moreellipses"> {ellipsestext} </span>
+          <span className="morecontent">
+            <span>{hidden}</span>
+            &nbsp;&nbsp;
+            <a href="" className="morelink" onClick={this.toggleMoreText}>
+              {moretext}
+            </a>
+          </span>
+        </p>
+      );
+    }
 
     return (
       <div>
@@ -36,8 +61,10 @@ class Post extends Component {
         ) : (
           <div className="post">
             <h1>{this.props.post.title}</h1>
-            <p className="body-p more">{this.props.post.body}</p>
-            <span data-id={this.props.id} onClick={this.props.showDetail}>Show post details</span>
+            <p className="body-p more">{body}</p>
+            <span data-id={this.props.id} onClick={this.props.showDetail}>
+              Show post details
+            </span>
             {options}
           </div>
         )}

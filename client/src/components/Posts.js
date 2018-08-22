@@ -3,28 +3,33 @@ import React, { Component } from "react";
 import Post from "./Post";
 
 class Posts extends Component {
-  componentDidUpdate = () => {
+
+  toggleMoreContent = (event) => {
+    if (event) event.preventDefault();
+
     
-    document.querySelectorAll(".body-p").forEach(para => {
-      let showChar = 500;
-      let ellipsestext = "...";
-      let moretext = "more";
-
-      if (para.textContent.length > showChar) {
-        let shown = para.textContent.substr(0, showChar);
-        let hidden = para.textContent.substr(showChar - 1, para.textContent.length - showChar);
-
-        let html = shown + '<span class="moreellipses">' + ellipsestext + '&nbsp;</span><span class="morecontent"><span>' + hidden + '</span>&nbsp;&nbsp;<a href="" class="morelink">' + moretext + '</a></span>';
-
-        para.innerHTML = html;
-      }
-      console.log(para.textContent.substr(0, showChar));
-      console.log(para.textContent.substr(showChar - 1, para.textContent.length - showChar));
-      
-      
-      
-    })
   }
+
+  // componentDidUpdate = () => {
+    
+  //   document.querySelectorAll(".body-p").forEach(para => {
+  //     let showChar = 500;
+  //     let ellipsestext = "...";
+  //     let moretext = "more";
+
+  //     if (para.textContent.length > showChar) {
+  //       let shown = para.textContent.substr(0, showChar);
+  //       let hidden = para.textContent.substr(showChar - 1, para.textContent.length - showChar);
+
+  //       let html = shown + '<span class="moreellipses">' + ellipsestext + '&nbsp;</span><span class="morecontent"><span>' + hidden + '</span>&nbsp;&nbsp;<a href="" id="moreLink" class="morelink" onClick={this.toggleMoreContent}>' + moretext + '</a></span>';
+
+  //       para.innerHTML = html;
+  //     }
+  //     console.log(para.textContent.substr(0, showChar));
+  //     console.log(para.textContent.substr(showChar - 1, para.textContent.length - showChar));
+
+  //   })
+  // }
 
   render() {
     let posts = this.props.posts.map(post => {
