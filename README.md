@@ -21,9 +21,9 @@
 * User authentication on signup
 * React carousel
 * Individual city pages for 5 cities
-* Scrollable post feed for each city, ordered from newest to oldest.
-* Users can create posts for each city, as well as update or delete any posts they have created.
-* Users can click on a post to view more details.
+* Scrollable post feed for each city, ordered from newest to oldest
+* Users can create posts for each city, as well as update or delete any posts they have created
+* Users can click on a post to view more details
 
 
 ## Installation and Deployment
@@ -33,4 +33,8 @@
 ## Wireframes
 
 ![alt text](/wireframes/wireframes.png)
+
+## Acknowledgments
+
+> [Isha Arora](https://github.com/ishaarora01) and [Kenny Bushman](https://github.com/kbbushman) for answering my questions when I got stuck.
 
