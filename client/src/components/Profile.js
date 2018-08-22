@@ -57,7 +57,7 @@ class Profile extends Component {
         let date2;
         let date3;
 
-        if (date != "") {
+        if (date !== "") {
             date2 = new Date(date)
             // Months use 0 index.
             date3 = date2.getMonth() + 1 + '/' + date2.getDate() + '/' + date2.getFullYear();

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import swal from "sweetalert";
+import swal from "sweetalert2";
 
 import Posts from "../components/Posts";
 import PostDetail from "../components/PostDetail";
@@ -61,7 +61,12 @@ class PostContainer extends Component {
         editingPost: !this.state.editing,
         editingPostId: null
       });
-      swal("Updated", "Your post has been updated.", "info");
+      swal({
+        title: "Updated",
+        text: "Your post has been updated.",
+        type: "info",
+        confirmButtonColor: "rgb(240, 196, 116)"
+      });
       this.fetchPosts();
     });
   };
@@ -100,16 +105,17 @@ class PostContainer extends Component {
       title: "Are you sure?",
       text:
         "Once deleted, nobody else can read your amazing post!",
-      icon: "warning",
+      type: "warning",
       buttons: true,
+      confirmButtonColor: "rgb(240, 196, 116)",
       dangerMode: true
     }).then((willDelete, id) => {
       if (willDelete) {
         deletePost = true;
       } else {
-        swal("Your post is safe!");
+        swal({title: "Your post is safe!",
+          confirmButtonColor: "rgb(240, 196, 116)"});
       }
-
       if (deletePost) {
       PostModel.deletePost(
         localStorage.getItem("username"),
@@ -120,8 +126,10 @@ class PostContainer extends Component {
           this.fetchPosts();
         })
         .then(() => {
-          swal("Poof! Your post has been deleted!", {
-            icon: "success"
+          swal({
+            text: "Poof! Your post has been deleted!",
+            type: "success",
+            confirmButtonColor: "rgb(240, 196, 116)"
           });
         })
         .catch(error => {

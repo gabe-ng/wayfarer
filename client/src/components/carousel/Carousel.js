@@ -55,25 +55,20 @@ class HomeCarousel extends Component {
     }
   };
 
-  // componentDidMount = () => {
-  //   this.setState({
-  //     currentTimeout: window.setInterval(this.decrementTime, 1000)
-  //   });
-  // }
-
-  componentDidUpdate = () => {
-    console.log(this.state.timer);
-  };
+  componentDidMount = () => {
+    this.setState({
+      currentTimeout: window.setInterval(this.decrementTime, 1000)
+    });
+  }
 
   render() {
     let styles;
 
-    if (this.props.loggedIn == 'true')  {
+    if (this.props.loggedIn === 'true')  {
       styles = { height: "65vh" }
     } else {
       styles = { height: "80vh" }
     }
-    console.log(styles);
     
 
     return (

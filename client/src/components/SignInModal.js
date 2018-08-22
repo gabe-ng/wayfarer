@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import swal from 'sweetalert';
+import swal from 'sweetalert2';
 
 import Modal from "react-modal";
 import UserModel from "../models/User";
@@ -15,14 +15,20 @@ class SignInModal extends Component {
         if (response.data === "success") {
           localStorage.setItem("username", username);
           localStorage.setItem("loggedIn", true);
-          swal(`Welcome back ${localStorage.getItem("username")}!`);
+          swal({text: `Welcome back ${localStorage.getItem("username")}!`,
+            confirmButtonColor: "rgb(240, 196, 116)"});
           this.props.loginSuccess();
           this.props.closeModal();
         }
       })
       .catch(error => {
         console.log(error);
-        swal("Whoops", "Incorrect username or password", "error");
+        swal({
+          title: "Whoops",
+          text: "Incorrect username or password!",
+          type: "error",
+          confirmButtonColor: "rgb(240, 196, 116)"
+        });
         this.incorrectInfo();
       });
   };

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import swal from "sweetalert";
+import swal from "sweetalert2";
 
 import Modal from "react-modal";
 import UserModel from "../models/User";
@@ -38,10 +38,22 @@ class SignUpModal extends Component {
 
     if (password !== confirmationPassword){
       this.passwordsDoNotMatch();
-      swal("Oops", "The passwords don't match.", "error");
+      swal({
+        title: "Oops",
+        text:
+          "The passwords don't match.",
+        type: "error",
+        confirmButtonColor:
+          "rgb(240, 196, 116)"
+      });
     } else if (name === "" || username === "" || password === "" || confirmationPassword === "") {
       this.emptyField();
-      swal("Oops", "Please fill out all the required fields.", "error");
+      swal({
+        title: "Oops",
+        text: "Please fill out all the required fields.",
+        type: "error",
+        confirmButtonColor: "rgb(240, 196, 116)"
+      });
     } else {
       UserModel.signUp(name, username, password, currentCity)
         .then(response => {
@@ -49,14 +61,25 @@ class SignUpModal extends Component {
           if (response.data === "user successfully created") {
             localStorage.setItem("username", username);
             localStorage.setItem("loggedIn", true);
-            swal(`Welcome to WayFarer ${localStorage.getItem("username")}!`,"", "success");
+            swal({
+              text:
+                `Welcome to Wayfarer ${localStorage.getItem("username")}!`,
+              type: "success",
+              confirmButtonColor:
+                "rgb(240, 196, 116)"
+            });
             this.props.closeModal(); 
             this.props.loginSuccess();
           }  
         })
         .catch(error => {
           console.log("Error from catch", error); 
-          swal("Oops", "That username is already taken.", "success");
+          swal({
+            title: "Oops",
+            text: "That username is already taken",
+            type: "error",
+            confirmButtonColor: "rgb(240, 196, 116)"
+          });
           this.takenUsername();
         })
     }
