@@ -39,7 +39,7 @@ class PostForm extends Component {
             className="edit-post-text"
             id="edit-body"
           />
-          <h6 id="edit-post-error">""</h6>
+          <h6 id="edit-post-error"> </h6>
           <button onClick={this.handleUpdate} className="edit-post-submit">
             Edit post
           </button>
